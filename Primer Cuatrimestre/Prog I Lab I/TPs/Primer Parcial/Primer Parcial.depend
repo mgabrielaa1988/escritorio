@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1507909480 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\primer parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+

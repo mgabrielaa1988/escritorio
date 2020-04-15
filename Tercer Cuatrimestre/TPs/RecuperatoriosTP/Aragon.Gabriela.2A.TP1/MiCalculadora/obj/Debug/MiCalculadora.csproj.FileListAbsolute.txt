@@ -1,0 +1,13 @@
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.csprojAssemblyReference.cache
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.LaCalculadora.resources
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\bin\Debug\MiCalculadora.exe
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\bin\Debug\MiCalculadora.pdb
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\bin\Debug\ClassLibrary1.dll
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\bin\Debug\ClassLibrary1.pdb
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.exe
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\MiCalculadora\obj\Debug\MiCalculadora.pdb

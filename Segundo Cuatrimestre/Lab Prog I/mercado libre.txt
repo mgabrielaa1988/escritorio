@@ -1,0 +1,1838 @@
+controller.c
+
+include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+
+
+void showMenu(void){
+
+    printf("1) Alta de usuario.\n");
+    printf("2) Modificar datos del usuario.\n");
+    printf("3) Baja del usuario.\n");
+    printf("4) Publicar producto.\n");
+    printf("5) Modificar publicacion.\n");
+    printf("6) Cancelar publicacion.\n");
+    printf("7) Comprar producto.\n");
+    printf("8) Listar publicaciones de usuario.\n");
+    printf("9) Listar publicaciones.\n");
+    printf("10) Listar usuarios.\n");
+}
+
+/** \brief Da de alta un nuevo elemento de la lista.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param contadorIdUsuario int - valor de id a asignar al nuevo elemento.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (0) si OK.
+ */
+char alta(Usuario* listaUsuarios, int length, int contadorIdUsuario){
+    char retorno = -1, check = -1;
+    int indexUsuario;
+    char userName[1000];
+    char password[1000];
+
+    printf("ALTA DE USUARIO: \n");
+    check = usuario_getUserName(listaUsuarios,length, userName); //Nick.
+    if(check == 0){
+        check = getPassword("Ingrese la clave de acceso: ",password,LENGTH_PASSWORD); //Contraseña.
+        if(check == 1){
+            retorno = 1;
+        }
+    }
+    if(retorno == 1){
+        indexUsuario = usuario_registerNew(listaUsuarios,length,contadorIdUsuario,userName,password);
+        if(indexUsuario != -1){
+            printf("\nOperacion Exitosa\nNUEVO USUARIO:\n\n");
+            usuario_printVertical(listaUsuarios,length,indexUsuario);
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+/** \brief Modifica datos de un Usuario
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void modificarUsuario(Usuario* listaUsuarios, int length){
+    int auxIndex;
+    if(length > 0 && listaUsuarios != NULL){
+        auxIndex = loguear(listaUsuarios,length);
+        if(auxIndex != -1){
+            if(usuario_modify(listaUsuarios,length,auxIndex) == 0){
+
+                printf("Datos Actuales:");
+                printf("\nID: %d.",listaUsuarios[auxIndex].idUsuario);
+                printf("\nNick: %s.",listaUsuarios[auxIndex].userName);
+                printf("\nClave de acceso: %s.",listaUsuarios[auxIndex].password);
+            }
+        }
+        else
+            printf("\nOperacion abortada."); //Operación abortada o Pointer Null o Length inválido.
+    }else
+    printf("\nOcurrio un error."); //Pointer Null o Length inválido.
+}
+
+/** \brief Modifica datos de un producto
+ * \param listaUsuarios Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void modificarProducto(Usuario* listaUsuarios, int lengthUsuarios,Producto* listaProductos, int lengthProductos){
+    int auxIndex;
+    int check = -2;
+    int idProducto;
+    int indexProducto;
+    int i;
+    if(lengthUsuarios > 0 && lengthProductos > 0 && listaProductos != NULL && listaUsuarios != NULL){
+        auxIndex = loguear(listaUsuarios,lengthUsuarios);
+        if(auxIndex != -1){
+            do{
+
+                printf("PRODUCTOS DEL USUARIO:\n");
+                for(i = 0; i < lengthProductos; i++){
+                    if(listaProductos[i].isEmpty == USED && listaProductos[i].idUsuario == listaUsuarios[auxIndex].idUsuario){
+                        producto_printVertical(listaProductos,lengthProductos,i);
+                        check = 1;
+                    }
+                }
+                if(check == 1){
+                    idProducto = getIntPositivo("\nIngrese el ID del producto que desea modificar: ");
+                    if(idProducto  != -1){
+                        indexProducto = producto_findId(listaProductos,lengthProductos,idProducto);
+                        if(indexProducto != -1){
+                            if(producto_modify(listaProductos,lengthProductos,indexProducto) == 0){
+                                check = 0;
+                            }
+                            else
+                                check = 1;
+                        }
+                        else{
+                            printf("\nID no encontrado");
+                            check = -1;
+                        }
+                    }
+                    else{
+                        check = -1;
+                    }
+                }
+                else
+                {
+                    printf("\nNo hay productos de este usuario.\n");
+                    break;
+                }
+            }while(check == 0 || (check == -1 && confirm("\nDesea ingresar otro?")));
+        }
+        else
+            printf("\nOperacion abortada."); //Operación abortada o Pointer Null o Length inválido.
+    }else
+    printf("\nOcurrio un error."); //Pointer Null o Length inválido.
+}
+
+/** \brief Da de baja a un Usuario.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void baja(Usuario* listaUsuarios, int length,Producto* listaProductos, int lengthProductos){
+    int auxIndex;
+    int i;
+    if(length > 0 && listaUsuarios != NULL){
+        do{
+
+            auxIndex = loguear(listaUsuarios,length); //Busca coincidencia y, de encontrarla, devuelve el indice.
+            if(auxIndex != -2){ //si == -1 Operación abortada
+                if(auxIndex == -1){ //Si no se encontró coincidencia.
+                    printf("\nEl userName ingresado no coincide con ningun usuario.\n");
+                    auxIndex = -1;
+                }
+                else{ //Si se encontró coincidencia.
+                    printf("\nIdentificado Usuario:");
+                    printf("\nID: %d.",listaUsuarios[auxIndex].idUsuario);
+                    printf("\nNombre de Usuario: %s.",listaUsuarios[auxIndex].userName);
+                    if(confirm("\n\nDesea proceder con la baja?")){
+                        listaUsuarios[auxIndex].isEmpty = EMPTY;
+                        for(i = 0; i < lengthProductos; i++){
+                            if(listaProductos[i].isEmpty == USED && listaProductos[i].idUsuario == listaUsuarios[auxIndex].idUsuario){
+                                listaProductos[i].isEmpty = EMPTY;
+                            }
+                        }
+                        printf("\nLa baja se realizo con exito.");
+                    }
+                }
+            }
+            else
+                printf("\nOperacion abortada."); //Operación abortada o Pointer Null o Length inválido.
+        }while(auxIndex == -1 && confirm("\nDesea ingresar otro?"));
+    }
+    else
+    printf("\nOcurrio un error."); //Pointer Null o Length inválido.
+}
+
+/** \brief Inicializa un nuevo elemento para el array de la estructura.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \param contadorIdProducto int - valor de id a asignar al nuevo elemento.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (0) si OK.
+ */
+char nuevoProducto(Usuario* listaUsuarios, int lengthUsuarios, Producto* listaProductos, int lengthProductos, int contadorIdProducto){
+    char retorno = -1;
+    char name[1000];
+    float precio;
+    int stock;
+    int check;
+    int indexProducto;
+    int indexUsuario = loguear(listaUsuarios,lengthUsuarios);
+    if(indexUsuario != -1){
+        printf("PUBLICAR PRODUCTO: \n");
+        check = getName("Ingrese el nombre de la publicacion: ",name,LENGTH_NAME); //Nombre del producto.
+        if(check == 1){
+            do{
+                precio = getPositiveFloat("Ingrese el precio: "); //Precio.
+                if(precio != -1){
+                    stock = getIntPositivo("Ingrese el stock: "); //Stock.
+                    if(stock != -1)
+                        retorno = 1;
+                    else
+                        printf("\nERROR. stock incorrecto.");
+                }
+                else
+                    printf("\nERROR. Precio incorrecto.");
+
+            }while((precio == -1 || stock == -1) && confirm("\nDesea ingresar otro?"));
+        }
+        if(retorno == 1){
+            indexProducto = producto_registerNew(listaProductos,lengthProductos,listaUsuarios[indexUsuario].idUsuario,contadorIdProducto,name,precio,stock);
+            if(indexUsuario != -1){
+                printf("\nOperacion Exitosa\nNUEVO PRODUCTO:\n\n");
+                producto_printVertical(listaProductos,lengthProductos,indexProducto);
+                retorno = 0;
+            }
+        }
+    }
+    return retorno;
+}
+
+
+/** \brief Pide y valida datos de logueo.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \return retorno int - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (Index Usuario) si OK.
+ */
+int loguear(Usuario* listaUsuarios, int length){
+    char userId;
+    int auxIndex;
+    int retorno = -1;
+    do{
+
+        userId = getIntPositivo("Ingrese el ID del usuario: ");
+        auxIndex = usuario_findUserID(listaUsuarios,length,userId); //Busca coincidencia y, de encontrarla, devuelve el indice.
+        if(userId != -1 && auxIndex != -2){ //si == -1 Operación abortada
+            if(auxIndex == -1) //Si no se encontró coincidencia.
+                printf("\nEl ID ingresado no coincide con ningun usuario.\n");
+            else{ //Si se encontró coincidencia.
+                retorno = auxIndex;
+            }
+        }
+    }while(retorno == -1 && confirm("\n\nDesea volver a intentar?"));
+    return retorno;
+}
+
+/** \brief Cancela la publicacion de un producto.
+ * \param listaUsuarios Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void CancelarProducto(Usuario* listaUsuarios, int lengthUsuarios,Producto* listaProductos, int lengthProductos){
+    int auxIndex;
+    int check = -2;
+    int idProducto;
+    int indexProducto;
+    int i;
+    if(lengthUsuarios > 0 && lengthProductos > 0 && listaProductos != NULL && listaUsuarios != NULL){
+        auxIndex = loguear(listaUsuarios,lengthUsuarios);
+        if(auxIndex != -1){
+            do{
+
+                printf("PRODUCTOS DEL USUARIO:\n");
+                for(i = 0; i < lengthProductos; i++){
+                    if(listaProductos[i].isEmpty == USED && listaProductos[i].idUsuario == listaUsuarios[auxIndex].idUsuario){
+                        producto_printVertical(listaProductos,lengthProductos,i);
+                        check = 1;
+                    }
+                }
+                if(check == 1){
+                    idProducto = getIntPositivo("\nIngrese el ID de la publicacion que desea cancelar: ");
+                    if(idProducto  != -1){
+                        indexProducto = producto_findId(listaProductos,lengthProductos,idProducto);
+                        if(indexProducto != -1){
+                            printf("\nLa cancelacion se realizo con exito");
+                            listaProductos[indexProducto].isEmpty = EMPTY;
+                        }
+                        else{
+                            printf("\nID no encontrado");
+                            check = -1;
+                        }
+                    }
+                    else{
+                        check = -1;
+                    }
+                }
+                else
+                {
+                    printf("\nNo hay productos de este usuario.\n");
+                    break;
+                }
+            }while(check == 0 || (check == -1 && confirm("\nDesea ingresar otro?")));
+        }
+        else
+            printf("\nOperacion abortada."); //Operación abortada o Pointer Null o Length inválido.
+    }else
+    printf("\nOcurrio un error."); //Pointer Null o Length inválido.
+}
+
+/** \brief Compra un producto
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void.
+ */
+void comprarProducto(Producto* listaProductos, int lengthProductos){
+    int indexProducto;
+    int idProducto;
+    int check = -1;
+    do{
+
+        idProducto = getInt("Ingrese el ID del producto: ");
+        indexProducto = producto_findId(listaProductos,lengthProductos,idProducto);
+        if(idProducto != -1 && indexProducto != -1){
+            check = producto_newBuy(listaProductos,lengthProductos,idProducto);
+            if(check == 0){
+                printf("\nSe ha comprado con exito.\n\n");
+            }
+        }
+        else
+            printf("\nNo se ha encontrado el ID.");
+    }while(check == -1 && confirm("\n\nDesea volver a intentar?"));
+}
+
+/** \brief Lista las publicaciones de un usuario.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void listarPublicacionesDeUsuario(Usuario* listaUsuarios, int lengthUsuarios, Producto* listaProductos, int lengthProductos){
+    int check = -1;
+    int i;
+    int auxIndex = loguear(listaUsuarios,lengthUsuarios);
+    if(auxIndex != -1){
+        printf("PRODUCTOS DEL USUARIO:\n");
+        do{
+            for(i = 0; i < lengthProductos; i++){
+                if(listaProductos[i].isEmpty == USED && listaProductos[i].idUsuario == listaUsuarios[auxIndex].idUsuario){
+                    producto_printVertical(listaProductos,lengthProductos,i);
+                    check = 1;
+                }
+                if(check == -1){
+                    printf("\nEste usuario no tiene productos");
+                }
+            }
+        }while(check == -1 && confirm("\nDesea ingresar otro?"));
+    }
+}
+
+/** \brief Muestra la lista de publicaciones de productos.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void listarPublicaciones(Producto* listaProductos, int lengthProductos){
+    int flag = -1;
+    int i,j;
+    printf("LISTA DE PRODUCTOS:\n");
+    for(i = 0, j = 1; i < lengthProductos; i++){
+        if(listaProductos[i].isEmpty == USED){
+            printf("Producto %d:\n",j);
+            producto_printVertical(listaProductos,lengthProductos,i);
+            printf("\n");
+            flag = 1;
+            j++;
+        }
+    }
+    if(flag == -1)
+        printf("No hay productos registrados.");
+}
+
+
+/** \brief Muestra la lista de usuarios con sus calificación promedio.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \return void
+ */
+void listarUsuarios(Usuario* listaUsuarios, int lengthUsuarios){
+    int flag = -1;
+    int i,j;
+    printf("LISTA DE USUARIOS:\n");
+    for(i = 0, j = 1; i < lengthUsuarios; i++){
+        if(listaUsuarios[i].isEmpty == USED){
+            printf("%d) ",j);
+            usuario_printHorizontal(listaUsuarios,lengthUsuarios,i);
+            flag = 1;
+            j++;
+        }
+    }
+    if(flag == -1)
+        printf("No hay usuarios registrados.");
+}
+
+
+
+controller.h
+
+
+
+#ifndef LIB_H_INCLUDED
+#define LIB_H_INCLUDED
+#include "usuario.h"
+#include "producto.h"
+#include "validar.h"
+
+/** \brief Imprime por consola el menú.
+ * \param void
+ * \return void
+ */
+void showMenu(void);
+
+/** \brief Da de alta un nuevo elemento de la lista.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param contadorIdUsuario int - valor de id a asignar al nuevo elemento.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (0) si OK.
+ */
+char alta(Usuario* listaUsuarios, int length, int contadorIdUsuario);
+
+/** \brief Modifica datos de un Usuario
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void modificarUsuario(Usuario* listaUsuarios, int length);
+
+/** \brief Modifica datos de un producto
+ * \param listaUsuarios Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void modificarProducto(Usuario* listaUsuarios, int lengthUsuarios,Producto* listaProductos, int lengthProductos);
+
+/** \brief Da de baja a un Usuario.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void baja(Usuario* listaUsuarios, int length,Producto* listaProductos, int lengthProductos);
+
+/** \brief Inicializa un nuevo elemento para el array de la estructura.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \param contadorIdProducto int - valor de id a asignar al nuevo elemento.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (0) si OK.
+ */
+char nuevoProducto(Usuario* listaUsuarios, int lengthUsuarios, Producto* listaProductos, int lengthProductos, int contadorIdProducto);
+
+/** \brief Pide y valida datos de logueo.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \return retorno int - Devuelve (-1) si ERROR [el usuario abortó la operación u ocurrio un error], (Index Usuario) si OK.
+ */
+int loguear(Usuario* listaUsuarios, int length);
+
+/** \brief Cancela la publicacion de un producto.
+ * \param listaUsuarios Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return void
+ */
+void CancelarProducto(Usuario* listaUsuarios, int lengthUsuarios,Producto* listaProductos, int lengthProductos);
+
+/** \brief Compra un producto
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void.
+ */
+void comprarProducto(Producto* listaProductos, int lengthProductos);
+
+/** \brief Lista las publicaciones de un usuario.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void listarPublicacionesDeUsuario(Usuario* listaUsuarios, int lengthUsuarios, Producto* listaProductos, int lengthProductos);
+
+/** \brief Muestra la lista de publicaciones de productos.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param lengthProductos int - Longitud del array.
+ * \return void
+ */
+void listarPublicaciones(Producto* listaProductos, int lengthProductos);
+
+/** \brief Muestra la lista de usuarios con sus calificación promedio.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param lengthUsuarios int - Longitud del array.
+ * \return void
+ */
+void listarUsuarios(Usuario* listaUsuarios, int lengthUsuarios);
+#endif // LIB_H_INCLUDED
+
+
+
+main
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+#define LENGTH_USUARIOS 100
+#define LENGTH_PRODUCTOS 1000
+#define MAX_OPTION 10
+
+
+int main(){
+    Usuario listaUsuarios[LENGTH_USUARIOS];
+    Producto listaProductos[LENGTH_PRODUCTOS];
+    usuario_init(listaUsuarios,LENGTH_USUARIOS); //Inicializa los espacios de la listaUsuarios como EMPTY.
+    producto_init(listaProductos,LENGTH_PRODUCTOS); //Inicializa los espacios de listaProductos como EMPTY.
+    int contadorIdUsuario = 0;
+    int contadorIdProducto = 0;
+    char option;
+
+//    contadorIdProducto = 40;
+//    contadorIdUsuario = 40;
+//    strcpy(listaUsuarios[0].userName, "usuario1");
+//    strcpy(listaUsuarios[0].password, "user123");
+//    listaUsuarios[0].isEmpty = USED;
+//    listaUsuarios[0].idUsuario = 0;
+//    listaUsuarios[0].calificaciones = 75;
+//    listaUsuarios[0].contadorCalificaciones = 10;
+
+
+    do{
+        showMenu(); //Imprime por pantalla el menú COMPLETO.
+        option = getOption(MAX_OPTION); //Obtiene una opción entre 1 y MAX_OPTION.
+        switch(option){
+            case 1: //Alta de usuario.
+                if(alta(listaUsuarios,LENGTH_USUARIOS,contadorIdUsuario) == 0)
+                    contadorIdUsuario++;
+                break;
+            case 2: //Modificar datos de usuario.
+                modificarUsuario(listaUsuarios,LENGTH_USUARIOS);
+                break;
+            case 3: //Baja de usuario.
+                baja(listaUsuarios,LENGTH_USUARIOS,listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 4: //Publicar producto.
+                if(nuevoProducto(listaUsuarios,LENGTH_USUARIOS,listaProductos,LENGTH_PRODUCTOS,contadorIdProducto) == 0)
+                    contadorIdProducto++;
+                break;
+            case 5: //Modificar publicacion.
+                modificarProducto(listaUsuarios,LENGTH_USUARIOS,listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 6: //Cancelar publicacion.
+                CancelarProducto(listaUsuarios,LENGTH_USUARIOS,listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 7: //Comprar Producto.
+                comprarProducto(listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 8: //Listar publicaciones de usuario.
+                listarPublicacionesDeUsuario(listaUsuarios,LENGTH_USUARIOS,listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 9: //Listar publicaciones.
+                listarPublicaciones(listaProductos,LENGTH_PRODUCTOS);
+                break;
+            case 10: //Listar usuarios.
+                listarUsuarios(listaUsuarios,LENGTH_USUARIOS);
+                break;
+            default: //Si hubo un error...
+                system("cls");
+                printf("ERROR. Opcion invalida.");
+                break;
+        }
+    }while(confirm("\n\nDesea realizar otra operacion?")); //Confirmación para volver al menú o salir.
+    system("cls");
+
+    return 0;
+}
+
+
+
+producto.c
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "producto.h"
+
+/** \brief  Inicializa todas las posiciones del array como vacías, para esto
+ *          pone la bandera (isEmpty) como TRUE(1) en todas las posiciones.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char producto_init(Producto* listaProductos, int length){
+    char retorno = -1;
+    int i;
+    if(listaProductos != NULL && length > 0){
+        for(i = 0; i < length; i++){
+            listaProductos[i].isEmpty = EMPTY;
+        }
+        retorno = 0;
+    }
+    return retorno;
+}
+
+/** \brief Obtiene los datos para registrar un nuevo elemento de la lista.
+ * \param lista Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto int - id a asignar.
+ * \param idProducto int - id del usuario al que le corresponde la publicacion.
+ * \param name char* - nombre del producto a asignar.
+ * \param precio float - precio a asignar.
+ * \param stock int - stock a asignar.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación], (1) si OK.
+ */
+char producto_registerNew(Producto* lista,int length,int idUsuario, int idProducto, char* name,float precio,int stock){
+    int retorno = -1;
+    int index;
+    if(lista != NULL && length > 0){
+
+        index = producto_findEmptyOrUsedPlace(lista, length, EMPTY);
+        if(index != -1){
+            lista[index].idProducto = idProducto;
+            lista[index].idUsuario = idUsuario;
+            lista[index].isEmpty = USED;
+            lista[index].precio = precio;
+            lista[index].cantidadVendida = 0; //Inicializo la cantidad vendida en cero.
+            lista[index].stock = stock;
+            strcpy(lista[index].name,name);
+            retorno = index;
+        }
+    }
+    return retorno;
+}
+
+/** \brief  Busca en el array la primer posicion libre/usada.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param emptyOrUsed - Ingresar 1 para buscar la primer posición vacía, 0 para buscar la primera llena.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (index del lugar libre) si Ok
+ */
+int producto_findEmptyOrUsedPlace(Producto* listaProductos, int length, char emptyOrUsed){
+    int i;
+    int retorno=-1;
+    if(listaProductos != NULL && length > 0){
+        for(i = 0; i < length; i++){
+            if(listaProductos[i].isEmpty == emptyOrUsed){
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief Modifica datos.
+ * \param lista Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - índice o posición de la lista donde se guardarán los datos.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char producto_modify(Producto* lista, int length, int index){
+    char leave = 0;
+    char retorno = -1;
+    float precio;
+    int stock;
+    if(length > 0 && lista != NULL){
+        retorno = 0;
+        do{
+
+            printf("Identificado producto '%s'...\n",lista[index].name);
+
+            producto_printVertical(lista,length,index);
+
+            printf("\n\nQue desea modificar?:");
+            printf("\n1) Precio.");
+            printf("\n2) Stock.");
+            printf("\n3) Salir.\n");
+            switch(getOption(3)){
+                case 1:
+                    precio = getPositiveFloat("\nIngrese nuevo precio:");
+                    if(precio != -1){
+                        lista[index].precio = precio;
+                        printf("\nModificacion exitosa.");
+                    }
+                    else
+                        printf("\nModificacion abortada.");
+                    break;
+                case 2:
+                    stock = getIntPositivo("\nIngrese nuevo precio:");
+                    if(stock != -1){
+                        lista[index].stock = stock;
+                        printf("\nModificacion exitosa.");
+                    }
+                    else
+                        printf("\nModificacion abortada.");
+                    break;
+                case 3:
+                    leave = 1;
+                    break;
+                default:
+                    leave = 1;
+                    break;
+            }
+        }while(leave == 0 && confirm("\n\nDesea seguir realizando modificaciones?"));
+    }
+    return retorno;
+}
+
+/** \brief Busca en la lista una coincidencia con el parametro recibido.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto Int - elemento a comparar.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (index) si Ok
+ */
+int producto_findId(Producto* listaProductos, int length, int idProducto){
+    int i;
+    int retorno = -1;
+    if(listaProductos != NULL && length > 0){
+        for(i = 0; i < length; i++){
+            if(listaProductos[i].isEmpty == USED && listaProductos[i].idProducto == idProducto){
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief Compra un producto.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto int - Id del producto que se desea comprar.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char producto_newBuy(Producto* listaProductos, int length, int idProducto){
+    int retorno = -1;
+    int index;
+    if(listaProductos != NULL && length > 0){
+        index = producto_findId(listaProductos, length, idProducto);
+        if(index != -1 && listaProductos[index].stock != 0){
+            listaProductos[index].cantidadVendida++;
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+/** \brief Imprime de forma vertical.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return void.
+ */
+void producto_printVertical(Producto* listaProductos, int length, int index){
+    printf("Producto ID - %d:\n",listaProductos[index].idProducto);
+    printf("Pertenece al usuario con ID = %d.\n",listaProductos[index].idUsuario);
+    printf("Nombre del producto: %s.\n",listaProductos[index].name);
+    printf("Precio = %.2f.\n",listaProductos[index].precio);
+    printf("Stock = %d.\n",listaProductos[index].stock);
+    printf("Cantidad Vendida = %d.\n\n",listaProductos[index].cantidadVendida);
+}
+
+///** \brief Encuentra el indice del producto con más likes.
+// * \param Producto* listaProductos - Puntero al array de la lista.
+// * \param length int - Longitud del array.
+// * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (indice) si Ok
+// */
+//int producto_FindIndexProductoConMasMeGusta(Producto* listaProductos, int length){
+//    int i;
+//    int retorno = -1;
+//    int max = -1;
+//    if(listaProductos != NULL && length > 0){
+//        for(i = 0; i < length; i++){
+//            if(listaProductos[i].isEmpty == USED && listaProductos[i].cantidadVendida > max){
+//                retorno = i;
+//                max = listaProductos[i].cantidadVendida;
+//            }
+//        }
+//    }
+//    return retorno;
+//}
+//
+///** \brief Obtiene el promedio de likes
+// * \param Producto* listaProductos - Puntero al array de la lista.
+// * \param length int - Longitud del array.
+// * \return retorno float - (-1) si hay un Error [Longitud invalida o puntero NULL] - (promedio) si Ok
+// */
+//float producto_getPromedioMeGusta(Producto* listaProductos, int length){
+//    int i;
+//    float acumulador = 0;
+//    float contador = 0;
+//    float promedio = 0;
+//    if(listaProductos != NULL && length > 0){
+//        for(i = 0; i < length; i++){
+//            if(listaProductos[i].isEmpty == USED){
+//                acumulador = acumulador + listaProductos[i].cantidadVendida;
+//                contador++;
+//            }
+//        }
+//        if(contador != 0)
+//            promedio = acumulador / contador;
+//    }
+//    return promedio;
+//}
+
+
+
+
+producto.h
+
+
+
+#ifndef COMENTARIO_H_INCLUDED
+#define COMENTARIO_H_INCLUDED
+#include "validar.h"
+#define EMPTY 1
+#define USED 0
+#define LENGTH_NAME 50
+
+struct{
+    int idProducto;
+    int idUsuario;
+    int stock;
+    float precio;
+    int cantidadVendida;
+    char name[LENGTH_NAME];
+    char isEmpty;
+} typedef Producto;
+
+/** \brief  Inicializa todas las posiciones del array como vacías, para esto
+ *          pone la bandera (isEmpty) como TRUE(1) en todas las posiciones.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char producto_init(Producto* listaProductos, int length);
+
+/** \brief Obtiene los datos para registrar un nuevo elemento de la lista.
+ * \param lista Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto int - id a asignar.
+ * \param idProducto int - id del usuario al que le corresponde la publicacion.
+ * \param name char* - nombre del producto a asignar.
+ * \param precio float - precio a asignar.
+ * \param stock int - stock a asignar.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación], (1) si OK.
+ */
+char producto_registerNew(Producto* lista,int length,int idProducto, int idUsuario, char* name,float precio,int stock);
+
+/** \brief  Busca en el array la primer posicion libre/usada.
+ * \param listaProductos Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param emptyOrUsed - Ingresar 1 para buscar la primer posición vacía, 0 para buscar la primera llena.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (index del lugar libre) si Ok
+ */
+int producto_findEmptyOrUsedPlace(Producto* listaProductos, int length, char emptyOrUsed);
+
+/** \brief Modifica datos.
+ * \param lista Producto* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - índice o posición de la lista donde se guardarán los datos.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char producto_modify(Producto* lista, int length, int index);
+
+/** \brief Busca en la lista una coincidencia con el parametro recibido.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto Int - elemento a comparar.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (index) si Ok
+ */
+int producto_findId(Producto* listaProductos, int length, int idProducto);
+
+/** \brief Compra un producto.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idProducto int - Id del producto que se desea comprar.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char producto_newBuy(Producto* listaProductos, int length, int idProducto);
+
+/** \brief Imprime de forma vertical.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return void.
+ */
+void producto_printVertical(Producto* listaProductos, int length, int index);
+
+/** \brief Encuentra el indice del producto con más likes.
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (indice) si Ok
+ */
+int producto_FindIndexProductoConMasMeGusta(Producto* listaProductos, int length);
+
+/** \brief Obtiene el promedio de likes
+ * \param Producto* listaProductos - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno float - (-1) si hay un Error [Longitud invalida o puntero NULL] - (promedio) si Ok
+ */
+float producto_getPromedioMeGusta(Producto* listaProductos, int length);
+
+#endif // COMENTARIO_H_INCLUDED
+
+
+
+
+usuario.c
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "usuario.h"
+
+/** \brief  Inicializa todas las posiciones del array como vacías, para esto
+ *          pone la bandera (isEmpty) como TRUE(1) en todas las posiciones.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char usuario_init(Usuario* listaUsuarios, int length){
+    char retorno = -1;
+    int i;
+    if(listaUsuarios != NULL && length > 0){
+        for(i = 0; i < length; i++){
+            listaUsuarios[i].isEmpty = EMPTY;
+        }
+        retorno = 0;
+    }
+    return retorno;
+}
+
+/** \brief Busca el primer espacio vacío (isEmptyValor = 1) o el primer ocupado (isEmptyValor = 0)
+ *         en la lista.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param isEmptyValor char - valor que se desea buscar (0 para ocupado, 1 para vacío).
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) [no hay espacios vacíos/llenos],
+ *         si OK: índice del primer espacio vacío/lleno encontrado.
+ */
+int usuario_findIndexIsEmpty(Usuario* listaUsuarios,int length,char isEmptyValor){
+    int i;
+    int retorno = -1;
+    if(listaUsuarios != NULL && length > 0){
+        retorno = -2;
+        for(i = 0; i < length; i++)
+            if(listaUsuarios[i].isEmpty == isEmptyValor){
+                retorno = i;
+                break;
+            }
+    }
+    return retorno;
+}
+
+/** \brief Obtiene los datos para registrar un nuevo elemento de la lista.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idUsuario int - id a asignar.
+ * \param userName char* - userName a asignar.
+ * \param password char* - password a asignar.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación], (1) si OK.
+ */
+char usuario_registerNew(Usuario* lista,int length, int idUsuario, char* userName, char* password){
+    int retorno = -1;
+    int index;
+    if(lista != NULL && length > 0){
+        index = usuario_findIndexIsEmpty(lista, length, EMPTY);
+        if(index != -1){
+            lista[index].idUsuario = idUsuario;
+            lista[index].isEmpty = USED;
+            lista[index].calificaciones = 0; //Inicializo las calificaciones en cero.
+            strcpy(lista[index].userName,userName);
+            strcpy(lista[index].password,password);
+            retorno = index;
+        }
+    }
+    return retorno;
+}
+
+/** \brief Busca un userName que coincida con el pasado por parametro.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userName char* - userName que se desea buscar.
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) si no hay coincidencia,
+ *         si OK: índice de la primera coincidencia encontrada.
+ */
+int usuario_findUserName(Usuario* lista,int length, char* userName){
+    int i;
+    int retorno = -2;
+    if(length > 0 && lista != NULL){
+        retorno = -1;
+        for(i = 0; i < length; i++){
+            if(lista[i].isEmpty == 0 && strcmp(lista[i].userName,userName) == 0){
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief Busca un ID que coincida con el pasado por parametro.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userID int - ID que se desea buscar.
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) si no hay coincidencia,
+ *         si OK: índice de la primera coincidencia encontrada.
+ */
+int usuario_findUserID(Usuario* lista,int length, int userId){
+    int i;
+    int retorno = -2;
+    if(length > 0 && lista != NULL){
+        retorno = -1;
+        for(i = 0; i < length; i++){
+            if(lista[i].isEmpty == 0 && lista[i].idUsuario == userId){
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief Obtiene y valida un userName.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userName char* - puntero al array donde se guardará el userName.
+ * \return retorno int - Devuelve (-1) si se abortó la operación, (0) si OK.
+ */
+char usuario_getUserName(Usuario* lista,int length,char* userName){
+    char check = -1, retorno = -1;
+    do{
+        check = getStringAlphanumeric("\nIngrese el nombre de usuario: ",userName,LENGTH_USERNAME);
+        if(check == 1){ //Si el usuario no abortó la operación/Ingresó dato alfanumerico.
+            check = usuario_findUserName(lista,length,userName); //Busco si existe el userName.
+            if(check == -1){ //Si no se encontró userName duplicado.
+                retorno = 0;
+            }
+            else
+                printf("\nEl nombre de usuario ingresado ya existe.");
+        }
+    }while(check != -1 && confirm("\nDesea volver a ingresar?"));
+    return retorno;
+}
+
+/** \brief Modifica datos.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - índice o posición de la lista donde se guardarán los datos.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char usuario_modify(Usuario* lista, int length, int index){
+    char salir = 0;
+    char retorno = -1;
+    char userName[1000];
+    char password[1000];
+    char check;
+    if(length > 0 && lista != NULL){
+        retorno = 0;
+        do{
+            system("cls");
+            printf("Identificado usuario '%s'...\n",lista[index].userName);
+
+            printf("\nDatos Actuales:");
+            printf("\nID: %d.",lista[index].idUsuario);
+            printf("\nNombre de usuario: %s.",lista[index].userName);
+            printf("\nClave de acceso: %s.",lista[index].password);
+
+            printf("\n\nQue desea modificar?:");
+            printf("\n1) Nombre.");
+            printf("\n2) Clave de acceso.");
+            printf("\n3) Salir.\n");
+            switch(getOption(3)){
+                case 1:
+                    check = usuario_getUserName(lista,LENGTH_USERNAME,userName);
+                    if(check == 0){
+                        strcpy(lista[index].userName,userName);
+                        printf("\nModificacion exitosa.");
+                    }
+                    else
+                        printf("\nModificacion abortada.");
+                    break;
+                case 2:
+                    check = getPassword("\nIngrese la nueva clave: ",password,LENGTH_PASSWORD);
+                    if(check == 1){
+                        strcpy(lista[index].password,password);
+                        printf("\nModificacion exitosa.");
+                    }
+                    else
+                        printf("\nModificacion abortada.");
+                    break;
+                case 4:
+                    salir = 1;
+                    break;
+                default:
+                    salir = 1;
+                    break;
+            }
+        }while(salir == 0 && confirm("\n\nDesea seguir realizando modificaciones?"));
+    }
+    return retorno;
+}
+
+///** \brief Busca el indice correspondiente al usuario con mas comentarios.
+// * \param listaUsuarios Usuario* - Puntero al array de la lista.
+// * \param length int - Longitud del array.
+// * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (indice) si Ok
+// */
+//int usuario_FindIndexUsuarioConMasUsuarios(Usuario* listaUsuarios,int length){
+//    int i;
+//    int retorno = -1;
+//    int max = -1;
+//    if(length > 0 && listaUsuarios != NULL){
+//        for(i = 0; i < length; i++){
+//            if(listaUsuarios[i].isEmpty == USED && listaUsuarios[i].commentsCounter > max){
+//                retorno = i;
+//                max = listaUsuarios[i].commentsCounter;
+//            }
+//        }
+//    }
+//    return retorno;
+//}
+//
+///** \brief Ordena por nombre y userName.
+// * \param listaUsuarios Usuario* - Puntero al array de la lista.
+// * \param length int - Longitud del array.
+// * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+// */
+//int usuario_bubbleSort(Usuario* listaUsuarios,int length){
+//    char flagswap;
+//    Usuario aux;
+//    int retorno = -1;
+//    if(length > 0 && listaUsuarios != NULL){
+//        do{
+//            flagswap = 0;
+//            int i;
+//            for(i = 0; i < length-1; i++){
+//                if(usuario_criteriosOrdenamiento(listaUsuarios[i],listaUsuarios[i+1]) > 0){
+//                    aux = listaUsuarios[i];
+//                    listaUsuarios[i] = listaUsuarios[i+1];
+//                    listaUsuarios[i+1] = aux;
+//                    flagswap = 1;
+//                }
+//            }
+//        }while(flagswap);
+//
+//        retorno = 0;
+//    }
+//    return retorno;
+//}
+//
+///** \brief  Criterios de ordenamiento.
+// * \param usuarioA Usuario - variable de la entidad a comparar.
+// * \param usuarioB Usuario - variable de la otra entidad a comparar.
+// * \return retorno int - valor correspondiente a los criterios de ordenamiento.
+// */
+//int usuario_criteriosOrdenamiento(Usuario usuarioA,Usuario usuarioB){
+//    int retorno = 0;
+//    if(stricmp(usuarioA.name,usuarioB.name) < 0)
+//    {
+//        retorno = 1;
+//    }
+//    else if(stricmp(usuarioA.name,usuarioB.name) > 0)
+//    {
+//        retorno = -1;
+//    }
+//    else
+//    {
+//        if(stricmp(usuarioA.userName,usuarioB.userName) > 0)
+//        {
+//            retorno = 1;
+//        }
+//        else if(stricmp(usuarioA.userName,usuarioB.userName) < 0)
+//        {
+//            retorno = -1;
+//        }
+//        else
+//        {
+//            retorno = 0;
+//        }
+//    }
+//    return retorno;
+//}
+
+/** \brief Imprime de forma vertical.
+ * \param Usuario* listaUsuarios - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return void.
+ */
+void usuario_printVertical(Usuario* listaUsuarios, int length, int index){
+    printf("Usuario ID - %d\n",listaUsuarios[index].idUsuario);
+    printf("Nombre de Usuario: %s.\n",listaUsuarios[index].userName);
+    printf("Clave: %s.\n",listaUsuarios[index].password);
+    printf("Calificacion promedio: %d",listaUsuarios[index].calificaciones);
+}
+
+/** \brief Imprime de forma horizontal.
+ * \param Usuario* listaUsuarios - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char usuario_printHorizontal(Usuario* listaUsuarios, int length, int index){
+    char retorno = -1;
+    float calificacionPromedio;
+    if(listaUsuarios != NULL && length > 0){
+        calificacionPromedio = (float)listaUsuarios[index].calificaciones / listaUsuarios[index].contadorCalificaciones;
+        printf("%s ",listaUsuarios[index].userName);
+        printf("(ID: %d) ",listaUsuarios[index].idUsuario);
+        printf("- Calificacion promedio: %.2f",calificacionPromedio);
+        retorno = 0;
+    }
+
+    return retorno;
+}
+
+/** \brief Obtiene el promedio de likes
+ * \param Usuario* listaUsuarios - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno float - (-1) si hay un Error [Longitud invalida o puntero NULL] - (promedio) si Ok
+ */
+float comentario_getPromedioCalificaciones(Usuario* listaUsuarios, int length){
+    int i;
+    float acumulador = 0;
+    float contador = 0;
+    float promedio = 0;
+    if(listaUsuarios != NULL && length > 0){
+        for(i = 0; i < length; i++){
+            if(listaUsuarios[i].isEmpty == USED){
+                acumulador = acumulador + listaUsuarios[i].calificaciones;
+                contador++;
+            }
+        }
+        if(contador != 0)
+            promedio = acumulador / contador;
+    }
+    return promedio;
+}
+
+
+
+usuario.h
+
+
+#ifndef USUARIO_H_INCLUDED
+#define USUARIO_H_INCLUDED
+#include "validar.h"
+#define LENGTH_USERNAME 20
+#define LENGTH_PASSWORD 20
+#define EMPTY 1
+#define USED 0
+
+struct{
+    int idUsuario;
+    char userName [LENGTH_USERNAME];
+    char password [LENGTH_PASSWORD];
+    int calificaciones;
+    int contadorCalificaciones;
+    char isEmpty;
+} typedef Usuario;
+
+/** \brief  Inicializa todas las posiciones del array como vacías, para esto
+ *          pone la bandera (isEmpty) como TRUE(1) en todas las posiciones.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno char - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+char usuario_init(Usuario* listaUsuarios, int length);
+
+/** \brief Busca el primer espacio vacío (isEmptyValor = 1) o el primer ocupado (isEmptyValor = 0)
+ *         en la lista.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param isEmptyValor char - valor que se desea buscar (0 para ocupado, 1 para vacío).
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) [no hay espacios vacíos/llenos],
+ *         si OK: índice del primer espacio vacío/lleno encontrado.
+ */
+int usuario_findIndexIsEmpty(Usuario* listaUsuarios,int length,char isEmptyValor);
+
+/** \brief Obtiene los datos para registrar un nuevo elemento de la lista.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param idUsuario int - id a asignar.
+ * \param userName char* - userName a asignar.
+ * \param password char* - password a asignar.
+ * \return retorno char - Devuelve (-1) si ERROR [el usuario abortó la operación], (1) si OK.
+ */
+char usuario_registerNew(Usuario* lista,int length, int idUsuario, char* userName, char* password);
+
+/** \brief Busca un userName que coincida con el pasado por parametro.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userName char* - userName que se desea buscar.
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) si no hay coincidencia,
+ *         si OK: índice de la primera coincidencia encontrada.
+ */
+int usuario_findUserName(Usuario* lista,int length, char* userName);
+
+/** \brief Busca un ID que coincida con el pasado por parametro.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userID int - ID que se desea buscar.
+ * \return retorno int - Devuelve (-2) si ERROR [Longitud invalida o puntero NULL], (-1) si no hay coincidencia,
+ *         si OK: índice de la primera coincidencia encontrada.
+ */
+int usuario_findUserID(Usuario* lista,int length, int userId);
+
+/** \brief Obtiene y valida un userName.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param userName char* - puntero al array donde se guardará el userName.
+ * \return retorno int - Devuelve (-1) si se abortó la operación, (0) si OK.
+ */
+char usuario_getUserName(Usuario* lista,int length,char* userName);
+
+/** \brief Modifica datos.
+ * \param lista Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - índice o posición de la lista donde se guardarán los datos.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char usuario_modify(Usuario* lista, int length, int index);
+
+/** \brief Busca el indice correspondiente al usuario con mas comentarios.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (indice) si Ok
+ */
+int usuario_FindIndexUsuarioConMasComentarios(Usuario* listaUsuarios,int length);
+
+/** \brief Ordena por nombre y userName.
+ * \param listaUsuarios Usuario* - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \return retorno int - (-1) si hay un Error [Longitud invalida o puntero NULL] - (0) si Ok
+ */
+int usuario_bubbleSort(Usuario* listaUsuarios,int length);
+
+/** \brief  Criterios de ordenamiento.
+ * \param usuarioA Usuario - variable de la entidad a comparar.
+ * \param usuarioB Usuario - variable de la otra entidad a comparar.
+ * \return retorno int - valor correspondiente a los criterios de ordenamiento.
+ */
+int usuario_criteriosOrdenamiento(Usuario usuarioA,Usuario usuarioB);
+
+/** \brief Imprime de forma vertical.
+ * \param Usuario* listaUsuarios - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return void.
+ */
+void usuario_printVertical(Usuario* listaUsuarios, int length, int index);
+
+/** \brief Imprime de forma horizontal.
+ * \param Usuario* listaUsuarios - Puntero al array de la lista.
+ * \param length int - Longitud del array.
+ * \param index int - Indice a imprimir.
+ * \return retorno char - Devuelve (-1) ERROR [Longitud invalida o puntero NULL], (0) si OK.
+ */
+char usuario_printHorizontal(Usuario* listaUsuarios, int length, int index);
+
+#endif // USUARIO_H_INCLUDED
+
+
+
+validar.c
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include "validar.h"
+
+//CONFIRM:
+/**
+ * \brief Hace una pregunta y pide por respuesta 'S' para si o 'N' para no. Valida respuesta.
+ * \param message char* - pregunta a mostrar por pantalla.
+ * \return retorno char - Devuelve (1) para sí. Devuelve (0) para no.
+ */
+char confirm(char* message){
+    char answer, retorno = 0, i;
+    printf("%s (S/N): ",message);
+    fflush(stdin);
+    scanf("%c",&answer);
+    for(i = 0; i < 5; i++){ //Pregunta 5 veces como máximo.
+        if(answer != 'S' &&  answer != 's' &&  answer != 'N' &&  answer != 'n')
+            answer = getChar("ERROR. Debe ingresar 'S' para si o 'N' para no. Reingrese: ");
+        else if(answer == 'S' || answer == 's'){
+            retorno = 1;
+            break;
+        }
+    }
+    return retorno;
+}
+
+
+//GETs:
+/**
+ * Obtiene un dato tipo INT por teclado y valida que sea positivo
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \return int retorno - -1 para operacion abortada, int ingresado si todo ok.
+ */
+int getIntPositivo(char* message){
+    int buffer;
+    int retorno = -1;
+    do{
+        buffer = getInt(message);
+        if(buffer < 0){
+            printf("Debe ingresar un numero entero positivo");
+        }
+        else{
+            retorno = buffer;
+        }
+    }while(buffer < 0 && confirm("\nDesea ingresar otro numero?"));
+
+    return retorno;
+}
+
+/**
+ * Obtiene un dato tipo FLOAT por teclado y valida que sea positivo
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \return float retorno - -1 para operacion abortada, float ingresado si todo ok.
+ */
+float getPositiveFloat(char* message){
+    float buffer;
+    float retorno = -1.0;
+    do{
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%f",&buffer);
+        if(buffer < 0){
+            printf("Debe ingresar un numero positivo");
+        }
+        else{
+            retorno = buffer;
+        }
+    }while(buffer < 0 && confirm("\nDesea ingresar otro numero?"));
+
+    return retorno;
+}
+
+/**
+ * Obtiene un dato tipo CHAR por teclado.
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \return buffer char - caracter ingresado por teclado.
+ */
+char getChar(char* message){
+    char buffer;
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%c",&buffer);
+    return buffer;
+}
+
+/**
+ * Obtiene un dato tipo INT por teclado.
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \return buffer int - entero ingresado por teclado.
+ */
+int getInt(char* message){
+    int buffer;
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%d",&buffer);
+    return buffer;
+}
+
+/** \brief Pide y devuelve la opción elegida por el usuario.
+ * \param maxOption unsigned char - opción máxima.
+ * \return retorno char - Devuelve (-1) si ERROR [maxOption inválido ú opción ingresada inválida], (buffer) opción elegida.
+ */
+char getOption(char maxOption){
+    char buffer, retorno = -1;
+    if(maxOption > 1 && maxOption < 128){
+        do{
+            printf("\nIngrese la opcion deseada entre 1 y %d: ",maxOption);
+            buffer = validateOption(maxOption);
+            if(buffer == -1)
+                printf("ERROR. La opcion ingresada debe ser un entero entre 1 y %d",maxOption);
+            else
+                retorno = buffer;
+        }while(buffer == -1 && confirm("\nDesea reingresar?"));
+    }
+    return retorno;
+}
+
+/**
+ * \brief Pide y obtiene un nombre (o similar) por teclado, valida, y guarda en array de caracteres.
+ *        Sobre la validación: sólo se pueden ingresar letras; el tamaño de la cadena de caracteres no puede
+ *        superar el tamaño del array-1.
+ * \param message char* - Mensaje para pedir el ingreso.
+ * \param arrayName char* - el array de caracteres donde se guarda el nombre.
+ * \param sizeArrayName int - tamaño del array donde se guarda el nombre.
+ * \return retorno char - Devuelve (-1) si el usuario aborta la operación, (1) si ok.
+ */
+char getName(char* message,char* arrayName, int sizeArrayName){
+    char retorno = -1;
+    do{
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%s",arrayName);
+        if(checkStringLength(arrayName,sizeArrayName) == 1) // Si supera la cantidad de caracteres máximos (tamaño del array -1)...
+            printf("ERROR. No puede contener mas de %d caracteres. ",sizeArrayName-1);
+        else if(checkOnlyLetters(arrayName) != 0) // Si contiene algo que no sean letras...
+            printf("ERROR. Solo puede contener letras.");
+        else
+            retorno = 1;
+    }while(retorno == -1 && confirm("\nDesea volver a ingresar?"));
+
+    return retorno;
+}
+
+/**
+ * \brief Pide y obtiene una contraseña por teclado, valida, y guarda en array de caracteres.
+ *        Sobre la validación: sólo se pueden ingresar letras y numeros; debe contener al menos 1 numero;
+ *        el tamaño de la cadena de caracteres no puede superar el tamaño del array-1 y debe ser mayor a 5.
+ * \param message char* - Mensaje para pedir el ingreso.
+ * \param arrayName char* - el array de caracteres donde se guarda la contraseña.
+ * \param sizeArrayName int - tamaño del array.
+ * \return retorno char - Devuelve (-1) si el usuario aborta la operación, (1) si ok.
+ */
+char getPassword(char* message, char* string, int length){
+    char retorno = -1, check;
+    char flagNum = 0, flagLetter = 0;
+    int i;
+    do{
+        check = getStringAlphanumeric(message,string,length);
+        if(check == 1){ // Si es menor a length-1 y solo numeros y letras.
+            for(i = 0; string[i] != '\0' ; i++){
+                if(string[i] >= '0' && string[i] <= '9')
+                    flagNum = 1;
+                if((string[i] >= 'A' && string[i] <= 'Z') || (string[i] >= 'a' && string[i] <= 'z'))
+                    flagLetter = 1;
+            }
+            if(flagNum && flagLetter && strlen(string) > 5){ //Si contiene al menos una letra, un numero y más de 5 caracteres.
+                retorno = 1;
+            }
+            else{
+                printf("\nERROR. Debe tener al menos un numero, una letra, y mas de 5 caracteres.");
+            }
+        }
+        else
+            break;
+    }while(retorno == -1 && confirm("\nDesea volver a ingresar?"));
+
+    return retorno;
+}
+
+/**
+ * \brief Pide y obtiene un mail por teclado, valida, y guarda en array de caracteres.
+ *        Sobre la validación: debe contener 1 SOLO arroba y al menos 1 punto después del arroba;
+ *        debe tener al menos 1 letra después del arroba; debe terminar en una letra;
+ *        no puede tener mayusculas y el tamaño de la cadena de caracteres no puede superar el tamaño del array-1.
+ * \param message char* - Mensaje para pedir el ingreso.
+ * \param arrayName char* - el array de caracteres donde se guarda la contraseña.
+ * \param sizeArrayName int - tamaño del array.
+ * \return retorno char - Devuelve (-1) si el usuario aborta la operación, (1) si ok.
+ */
+char getMail(char* message, char* string, int length){
+    char retorno = -1;
+    char flagArroba, flagMayus, flagPrimerCaracter, flagUltimoCaracter, flagPunto, flagLetraPostArroba;
+    int contadorArroba;
+    int i, iArroba, iContraBarraCero;
+    do{
+        flagArroba = 0;
+        flagMayus = 0;
+        flagPrimerCaracter = 0;
+        flagUltimoCaracter = 0;
+        flagLetraPostArroba = 0;
+        flagPunto = 0;
+        contadorArroba = 0;
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%s",string);
+        if(checkStringLength(string,length) == 0){ // Si es menor a length-1.
+            if(string[0] >= 'a' && string[0] <= 'z') //Si el primer caracter es letra.
+                flagPrimerCaracter = 1;
+            for(i = 0; ; i++){ //alguna letra mayuscula? Hay arroba? cuantos?
+                if(string[i] == '@'){
+                    flagArroba = 1;
+                    iArroba = i;
+                    contadorArroba++;
+                }
+                if(string[i] >= 'A' && string[i] <= 'Z') //Si hay una mayuscula...
+                    flagMayus = 1;
+                if(string[i] == '\0'){
+                    iContraBarraCero = i;
+                    break;
+                }
+            }
+            if(flagArroba && contadorArroba == 1 && flagMayus == 0  && flagPrimerCaracter){ //Si tiene UN SOLO arroba y no tiene mayusculas.
+                if(string[iContraBarraCero-1] >= 'a' && string[iContraBarraCero-1] <= 'z') //Si el último caracter es una letra.
+                    flagUltimoCaracter = 1;
+                for(i = iArroba; string[i] != '\0' ; i++){ //Hay punto después del arroba y una letra entre el arroba y el punto?
+                    if(string[i] >= 'a' && string[i] <= 'z')
+                        flagLetraPostArroba = 1;
+                    if(string[i] == '.'){
+                        flagPunto = 1;
+                        break;
+                    }
+                }
+                if(flagUltimoCaracter && flagPunto && flagLetraPostArroba)
+                    retorno = 1;
+            }
+            if(retorno == -1)
+                printf("\nERROR. Debe ingresar una direccion valida.");
+        }
+        else
+            printf("\nERROR. La cantidad de caracteres no puede ser mayor a %d.",length-1);
+    }while(retorno == -1 && confirm("\nDesea volver a ingresar?"));
+
+    return retorno;
+}
+
+/**
+ * \brief Pide y obtiene una cadena de caracteres por teclado, valida, y guarda en array de caracteres.
+ *        Sobre la validación: sólo se pueden ingresar letras y mueros; el tamaño de la cadena de
+ *        caracteres no puede superar el tamaño del array-1.
+ * \param message char* - Mensaje para pedir el ingreso.
+ * \param string char* - el array donde se guarda la cadena de caracteres.
+ * \param length int - tamaño del array.
+ * \return retorno char - Devuelve (-1) si el usuario aborta la operación, (1) si ok.
+ */
+char getStringAlphanumeric(char* message,char* string, int length){
+    char retorno = -1;
+    do{
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%s",string);
+        if(checkStringLength(string,length) == 1) // Si supera la cantidad de caracteres máximos (tamaño del array -1)...
+            printf("ERROR. No puede contener mas de %d caracteres. ",length-1);
+        else if(checkIsAlphanumeric(string) != 0) // Si contiene algo que no sean letras...
+            printf("ERROR. Solo se admiten letras y numeros.");
+        else
+            retorno = 1;
+    }while(retorno == -1 && confirm("\nDesea volver a ingresar?"));
+
+    return retorno;
+}
+
+/**
+ * Pide y obtiene un dato tipo INT y lo valida en un rango determinado.
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \param arrayEstadoResultado int* - array donde se guardará el estado de la operación y el resultado.
+ * \param minIncluded int - valor mínimo incluído.
+ * \param maxIncluded int - valor máximo incluído.
+ * \return void - carga la posición 0 de arrayEstadoResultado con: (-1) operación abortada, (0) Ok.
+ *         Y la posición 1 con el resultado.
+ */
+void getIntLimitedRange(char* message,int* arrayEstadoResultado, int minIncluded, int maxIncluded){
+    arrayEstadoResultado[0] = -1; //Posición para estado o info de la operación.
+    arrayEstadoResultado[1] = 0; //Posición del resultado (En cero por defecto).
+    int buffer;
+    do{
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%d",&buffer);
+        if(buffer >= minIncluded && buffer <= maxIncluded){
+            arrayEstadoResultado[0] = 0;
+            arrayEstadoResultado[1] = buffer;
+        }
+        else
+            printf("\nERROR. Debe ingresar un numero entre %d y %d.",minIncluded,maxIncluded);
+    }while(arrayEstadoResultado[0] == -1 && confirm("\nDesea volver a ingresar?"));
+}
+
+/**
+ * Obtiene y valida un dato tipo UNSIGNED INT por teclado.
+ * \param message char* - mensaje a mostrar en pantalla para pedir el ingreso del dato.
+ * \return buffer long - Devuelve (-1) si ERROR[operación abortada], si OK: entero ingresado por teclado.
+ */
+long getOnlyPositiveInt(char* message){
+    char buffer[6];
+    long retorno = -1;
+    do{
+        printf("%s",message);
+        fflush(stdin);
+        scanf("%5s",buffer);
+        if(checkOnlyPositiveNumbers(buffer) == 0){ //Si son todos numeros y su longitud es < a 6...
+            retorno = strtol(buffer, NULL, 10); //Transforma la cadena de caracteres a unsigned int.
+            if(retorno > 65535) //si es mayor a 65535 no se podrá guardarlo en un unsigned int.
+                retorno = -1;
+        }
+        if (retorno == -1)
+            printf("\nERROR. Debe ingresar un numero positivo y menor a 65535");
+    }while(retorno == -1 && confirm("\nDesea volver a ingresar?"));
+
+    return retorno;
+}
+
+
+//Validaciones:
+/** \brief Obtiene por teclado y valida la opción ingresada por el usuario.
+ * \param maxOption unsigned char - opción máxima.
+ * \return retorno char - Devuelve (-1) si ERROR [opción ingresada inválida], (buffer) opción elegida.
+ */
+char validateOption(char maxOption){
+    int buffer;
+    char retorno = -1;
+    fflush(stdin);
+    scanf("%d",&buffer);
+    if(buffer <= maxOption && buffer >= 1)
+        retorno = buffer;
+    return retorno;
+}
+
+/** \brief Informa si la cadena de caracteres contiene sólo letras, o no.
+ * \param array char* - array que contiene cadena de caracteres.
+ * \return retorno char - Devuelve (-1) si [ERROR. Contiene algo que no sean letras], (0) si OK.
+ */
+char checkOnlyLetters(char* array){
+    char retorno = 0;
+    int i;
+    for(i=0; array[i]!='\0'; i++)
+        if(!(array[i] >= 'A' && array[i] <= 'Z') && !(array[i] >= 'a' && array[i] <= 'z')){
+            retorno = -1;
+            break;
+        }
+    return retorno;
+}
+
+/** \brief Informa si la cadena de caracteres contiene sólo letras o numeros.
+ * \param string char* - array que contiene cadena de caracteres.
+ * \return retorno char - Devuelve (-1) si [ERROR. Contiene algo que no sean letras o numeros], (0) si OK.
+ */
+char checkIsAlphanumeric(char* string){
+    char retorno = 0;
+    int i;
+    for(i=0; string[i]!='\0'; i++)
+        if(!(string[i] >= 'A' && string[i] <= 'Z') && !(string[i] >= 'a' && string[i] <= 'z') && !(string[i] >= '0' && string[i] <= '9')){
+            retorno = -1;
+            break;
+        }
+    return retorno;
+}
+
+/** \brief Informa si la cadena de caracteres contiene sólo números positivos, o no.
+ * \param string char* - array que contiene cadena de caracteres.
+ * \return retorno char - Devuelve (-1) si [ERROR. Contiene algo que no sean numeros], (0) si OK.
+ */
+char checkOnlyPositiveNumbers(char* array){
+    char retorno = 0;
+    int i;
+    for(i=0; array[i]!='\0'; i++)
+        if(!(array[i] >= '0' && array[i] <= '9')){
+            retorno = -1;
+            break;
+        }
+    return retorno;
+}
+
+/** \brief Informa datos de validación sobre el largo de un string.
+ * \param string char* - array que contiene cadena de caracteres.
+ * \param length int - tamaño del array.
+ * \return retorno char - Devuelve (1) si [ERROR. Largo de caracteres mayor al tamaño del array-1.],
+ *         (2) si [ERROR. Si no se ingresó nada.], (0) si OK.
+ */
+char checkStringLength(char* string, int length){
+    char retorno = 0;
+    if(strlen(string) > length-1)
+        retorno = 1;
+    else if(strlen(string) == 0)
+        retorno = 2;
+    return retorno;
+}
+
+
+//Buscar:
+/** \brief Busca el indice donde se encuentra el valor máximo de un array de ints.
+ * \param array char* - array que contiene los valores a analizar.
+ * \param length int - tamaño del array.
+ * \return retorno int - Devuelve un indice correspondiente al máximo.
+ */
+int findMaxArrayInt(int* array, int length){
+    int max = array[0];
+    int indexMax = 0;
+    int i;
+    for(i = 1; i < length; i++){
+        if(array[i] > max){
+            indexMax = i;
+            max = array[i];
+        }
+    }
+    return indexMax;
+}
+
+
+validar.h
+
+
+
+#ifndef VALIDAR_H_INCLUDED
+#define VALIDAR_H_INCLUDED
+
+//Confirmaciones:
+char confirm(char* message);
+
+//Gets:
+int getIntPositivo(char* message);
+float getPositiveFloat(char* message);
+char getChar(char* message);
+int getInt(char* message);
+char getOption(char maxOption);
+char getName(char* message,char* arrayName, int sizeArrayName);
+char getPassword(char* message, char* string, int length);
+char getMail(char* message, char* string, int length);
+char getStringAlphanumeric(char* message,char* string, int length);
+void getIntLimitedRange(char* message,int* arrayEstadoResultado, int minIncluded, int maxIncluded);
+long getOnlyPositiveInt(char* message);
+
+//Validaciones:
+char validateOption(char maxOption);
+char checkOnlyLetters(char* array);
+char checkIsAlphanumeric(char* string);
+char checkOnlyPositiveNumbers(char* array);
+char checkStringLength(char* string, int length);
+
+//Buscar:
+int findMaxArrayInt(int* array, int length);
+
+#endif // VALIDAR_H_INCLUDED
+
+
+
+
+

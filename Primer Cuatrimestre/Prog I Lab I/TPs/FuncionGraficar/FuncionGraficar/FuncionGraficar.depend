@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1530133724 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\funciongraficar\funciongraficar\main.c
+	<stdio.h>
+	<stdlib.h>
+

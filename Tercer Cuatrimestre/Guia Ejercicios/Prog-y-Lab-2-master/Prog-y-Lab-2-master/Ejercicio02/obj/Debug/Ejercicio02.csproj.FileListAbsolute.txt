@@ -1,0 +1,7 @@
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\bin\Debug\Ejercicio02.exe.config
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\bin\Debug\Ejercicio02.exe
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\bin\Debug\Ejercicio02.pdb
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\obj\Debug\Ejercicio02.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\obj\Debug\Ejercicio02.exe
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\obj\Debug\Ejercicio02.pdb
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio02\obj\Debug\Ejercicio02.csprojAssemblyReference.cache

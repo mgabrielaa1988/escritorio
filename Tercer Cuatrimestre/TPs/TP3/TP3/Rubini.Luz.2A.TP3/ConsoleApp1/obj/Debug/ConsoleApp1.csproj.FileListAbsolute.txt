@@ -1,0 +1,16 @@
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\Archivos.dll
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ClasesAbstractas.dll
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ClasesInstanciables.dll
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\Excepciones.dll
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\Archivos.pdb
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ClasesAbstractas.pdb
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\ClasesInstanciables.pdb
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\bin\Debug\Excepciones.pdb
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Luz\source\repos\Rubini.Luz.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

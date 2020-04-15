@@ -1,0 +1,7 @@
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\tp4def\Aragon.Gabriela.2A.TP4\Entidades\obj\Debug\Entidades.pdb

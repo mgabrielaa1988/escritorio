@@ -1,0 +1,126 @@
+/// <reference path="node_modules/@types/jquery/index.d.ts" />
+/// <reference path=".ts"/>
+
+namespace Nombre{
+export class Manejadora{
+
+public static Agregar(){
+let pagina : string = "./BACKEND/administrar.php";
+            let archivo : any = (<HTMLInputElement>document.getElementById("foto"));
+            let patente:string= (<HTMLInputElement>document.getElementById("txt")).value;
+            let strprecio:string=(<HTMLInputElement>document.getElementById("txtNumero")).value;
+            let marca:string=(<HTMLSelectElement>document.getElementById("cboMarca")).value;
+
+            let path:string="fotos/"+patente+".jpg";
+
+            let precio:number=Number(strprecio);//parseo si es necesario
+
+            let obj:Clases.Nombre=new Clases.Nombre(patente,marca,precio,path);creo un nuevo obj
+	
+            let form : FormData = new FormData();
+            form.append("caso","agregar");
+            form.append("cadenaJson", JSON.stringify(obj.ToJson()));
+            form.append("foto", foto.files[0]);
+
+ $.ajax({
+                type: 'POST',
+                url: pagina,
+                dataType:"json",
+                data: formData,
+                contentType: false,
+                processData: false,
+            })
+            .done(function (params) 
+            {
+                if(params.TodoOK)
+                {
+                    console.log("Todo ok");
+                    $("#txtPatente").val("");
+                    $("#txtPrecio").val("");
+                    $("#foto").val("");
+                    $("#hdnIdModificacion").val("");
+                    $("#divImg").empty();
+
+                }
+                else
+                {
+                    console.log("Error al subir el archivo");
+                }
+                
+            })
+            .fail(function(params){
+                console.log(params);
+            });
+
+}
+
+
+public static Mostrar(){
+let form : FormData = new FormData();
+
+        form.append('op', "TraerTodos");
+
+        $.ajax({
+            type : 'POST',
+            url : './BACKEND/nexo.php',
+            dataType : "",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form,
+            async: true
+        }).done((tabla : string)=>{
+            $("#mostrar").html(tabla);
+        });
+}
+
+ public static Eliminar(jsonstr:any)
+        {
+            let pagina : string = "./BACKEND/administrar.php";
+            let formData:FormData=new FormData();
+            formData.append("cadenaJson",JSON.stringify(jsonstr));
+            formData.append("caso", "eliminar");
+
+
+            $.ajax({
+                type: 'POST',
+                url: pagina.php,
+                dataType:"json",
+                data: formData,
+                contentType: false,
+                processData: false
+            })
+            .done(function (params) 
+            {
+                if(params.TodoOK)
+                {
+                    console.log("Todo ok");
+                }
+                else
+                {
+                    console.log("Error eliminar el archivo");
+                }
+                
+            })
+            .fail(function(params){
+                console.log(params);
+            });
+
+
+        }
+
+
+public static Modificar(jsonstr:any)
+        {
+            $("#txtPatente").val(jsonstr.patente);
+            $("#txtPrecio").val(jsonstr.precio);
+            $("#cboMarca").val(jsonstr.marca);
+            $("#txtPatente").prop('readOnly', false);
+            $("#hdnIdModificacion").val("modificar");
+            
+        }
+
+
+
+}
+}

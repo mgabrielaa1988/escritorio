@@ -1,0 +1,6 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\bin\Debug\Entidades.Clase07.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\bin\Debug\Entidades.Clase07.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\obj\Debug\Entidades.Clase07.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\obj\Debug\Entidades.Clase07.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\obj\Debug\Entidades.Clase07.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Entidades.Clase07\obj\Debug\Entidades.Clase07.pdb

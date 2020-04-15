@@ -1,0 +1,53 @@
+<!--16- Confeccionar un formulario que permita ingresar el nombre de una persona, su mail, su DNI 
+(documento nacional de identidad) y finalmente su currículum vitae  (este último dato hacerlo utilizando 
+un <TEXTAREA>). Al pulsar el botón btnAceptar , por medio de una función en TypeScript, mostrar todos 
+sus datos por consola.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./ejercicio16.js"></script>
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <FONT face="verdana">
+        <div align="center">
+            <caption><br>
+                <h4>Carga de datos</h4><br>
+            </caption>
+            <form>
+                <table align="center" border="5">
+                    <tbody>
+                        <tr>
+                            <td>Nombre completo: </td>
+                            <td><input type="text" id="txtNombre" style="width: 98%"></td>
+                        </tr>
+                        <tr>
+                            <td>Mail: </td>
+                            <td><input type="text" id="txtMail" style="width: 98%"></td>
+                        </tr>
+                        <tr>
+                            <td>DNI: </td>
+                            <td><input type="text" id="txtDNI" style="width: 98%"></td>
+                        </tr>
+                        <tr>
+                            <td>Curriculum Vitae: </td>
+                            <td><textarea rows="10" cols="30" id="txtCV"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="btnAceptar" value="Aceptar" onclick="EnviarInfo()"
+                                    style="width: 99%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </FONT>
+</body>
+
+</html>

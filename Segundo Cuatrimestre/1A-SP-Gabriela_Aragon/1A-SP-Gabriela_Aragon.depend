@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1530106712 source:c:\users\gabriela\desktop\1a-sp-gabriela_aragon\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arraylist.h"
+	"validaciones.h"
+	"funciones.h"
+
+1530106712 c:\users\gabriela\desktop\1a-sp-gabriela_aragon\arraylist.h
+
+1530026581 c:\users\gabriela\desktop\1a-sp-gabriela_aragon\validaciones.h
+
+1530106772 c:\users\gabriela\desktop\1a-sp-gabriela_aragon\funciones.h
+
+1530106759 source:c:\users\gabriela\desktop\1a-sp-gabriela_aragon\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"arraylist.h"
+	"validaciones.h"
+	"funciones.h"
+
+1530106530 source:c:\users\gabriela\desktop\1a-sp-gabriela_aragon\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arraylist.h"
+	"validaciones.h"
+	"funciones.h"
+
+1530106549 source:c:\users\gabriela\desktop\1a-sp-gabriela_aragon\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"arraylist.h"
+	"validaciones.h"
+	"funciones.h"
+

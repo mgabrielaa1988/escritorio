@@ -1,0 +1,2 @@
+
+char validarMenu (char opcion);

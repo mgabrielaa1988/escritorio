@@ -1,0 +1,33 @@
+
+<!--24- Realizar una página que permita el ingreso de: Apellido, Nombre, Dni y sexo de una persona. 
+Si el usuario pulsa el botón de confirmación se invocará a una función encargada de validar cada uno de 
+los datos ingresados (que tanto el nombre y apellido no estén vacíos, que el documento sea numérico y 
+que el sexo sea o ‘m’ o ‘f’ ). -->
+
+<!--25- Agregarle al ejercicio anterior un mensaje, en color rojo (#ff0000), en aquellos campos 
+que no sean válidos. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 24 - HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="ejercicio24.js"></script>
+</head>
+<body><FONT FACE="arial"><div align="center">
+        <table align="center"><tbody>
+            <tr><td align="right">Nombre:</td><td><input type="text" id="nombre"></td></tr>
+            <p><font color="red" id="errorNombre"></font></p>
+            <tr><td align="right">Apellido:</td><td><input type="text" id="apellido"></td></tr>
+            <p><font color="red" id="errorApellido"></font></p>
+            <tr><td align="right">DNI:</td><td><input type="number" id="dni"></td></tr>
+            <p><font color="red" id="errorDni"></font></p>
+            <tr><td align="right">Sexo:</td><td><input type="text" id="sexo" placeholder="Ingrese su sexo (f o m)..."></td></tr>
+            <p><font color="red" id="errorSexo"></font></p>
+            <tr><td colspan="2" align="center"><input type="button" id="btnConfirm" value="Confirmar" onclick="AddErrorAll()"></td></tr>
+        </tbody></table></div></FONT>
+    </body>
+</html>

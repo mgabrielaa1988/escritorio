@@ -1,0 +1,6 @@
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\Entidades\obj\Debug\Entidades.pdb

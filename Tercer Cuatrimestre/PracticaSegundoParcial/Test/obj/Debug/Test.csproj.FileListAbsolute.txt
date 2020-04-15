@@ -1,0 +1,10 @@
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\bin\Debug\Test.exe.config
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\bin\Debug\Test.exe
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\bin\Debug\Test.pdb
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\bin\Debug\Clases.dll
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\bin\Debug\Clases.pdb
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\obj\Debug\Test.exe
+C:\Users\Gabriela\source\repos\PracticaSegundoParcial\Test\obj\Debug\Test.pdb

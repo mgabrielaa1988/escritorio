@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1506055631 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 2\prog i lab i tp_2_cascara\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"funciones.h"
+	"validaciones.h"
+
+1506055631 c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 2\prog i lab i tp_2_cascara\tp_2_cascara\funciones.h
+
+1505777513 c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 2\prog i lab i tp_2_cascara\tp_2_cascara\validaciones.h
+
+1506015383 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 2\prog i lab i tp_2_cascara\tp_2_cascara\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"funciones.h"
+	"validaciones.h"
+
+1506055631 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 2\prog i lab i tp_2_cascara\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"funciones.h"
+	"validaciones.h"
+

@@ -1,0 +1,16 @@
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\Entidades.dll
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\Entidades.pdb
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\Entidades.dll
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\bin\Debug\Entidades.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache

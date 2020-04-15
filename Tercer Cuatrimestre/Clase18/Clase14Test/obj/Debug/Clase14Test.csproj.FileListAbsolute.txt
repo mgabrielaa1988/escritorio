@@ -1,0 +1,10 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\bin\Debug\Clase14Test.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\bin\Debug\Clase14Test.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\bin\Debug\Clase14Test.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\bin\Debug\Clase14.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\bin\Debug\Clase14.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\obj\Debug\Clase14Test.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\obj\Debug\Clase14Test.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\obj\Debug\Clase14Test.csproj.CopyComplete
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\obj\Debug\Clase14Test.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14Test\obj\Debug\Clase14Test.pdb

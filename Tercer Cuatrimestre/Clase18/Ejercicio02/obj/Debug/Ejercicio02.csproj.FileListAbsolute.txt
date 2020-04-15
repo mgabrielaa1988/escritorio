@@ -1,0 +1,7 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\bin\Debug\Ejercicio02.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\bin\Debug\Ejercicio02.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\bin\Debug\Ejercicio02.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\obj\Debug\Ejercicio02.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\obj\Debug\Ejercicio02.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\obj\Debug\Ejercicio02.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio02\obj\Debug\Ejercicio02.pdb

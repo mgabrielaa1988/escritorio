@@ -1,0 +1,47 @@
+<!--23-Crear una página que posea un formulario que permita el ingreso del nombre, apellido, email y cantidad 
+de horas trabajadas a la semana de un operario. Al pulsar el botón btnCalcular , se invocará a una función que 
+calcule y muestre en un cuadro de texto (INPUT type=text) el salario mensual del operario. 
+El salario se calculará por medio de la cantidad de horas trabajadas al mes por un coeficiente. 
+Dicho coeficiente lo retornará la función ObtenerCoeficiente (por el momento será siempre 6.88). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="ejercicio23.js"></script>
+    <title>Ejercicio 23</title>
+</head>
+
+<body>
+    <FONT FACE="verdana">
+        <div align="center">
+            <table>
+                <tr>
+                    <td align="right">Nombre:</td>
+                    <td><input type="text" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td align="right">Apellido:</td>
+                    <td><input type="text" id="apellido"></td>
+                </tr>
+                <tr>
+                    <td align="right">Mail:</td>
+                    <td><input type="email" id="mail"></td>
+                </tr>
+                <tr>
+                    <td align="right">Hs. Trabajadas:</td>
+                    <td><input type="number" id="horasT"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="btnCalcular()" value=" Calcular "></td>
+                    <td align="center"><input type="text" id="cuadro" disabled></td>
+                </tr>
+            </table>
+        </div>
+    </FONT>
+</body>
+
+</html>

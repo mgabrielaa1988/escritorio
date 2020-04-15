@@ -1,0 +1,6 @@
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\bin\Debug\EntidadesTest.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\bin\Debug\EntidadesTest.exe
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\bin\Debug\EntidadesTest.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\obj\Debug\EntidadesTest.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\obj\Debug\EntidadesTest.exe
+D:\VisualStudio\Aragon.Gabriela.2A\EntidadesTest\obj\Debug\EntidadesTest.pdb

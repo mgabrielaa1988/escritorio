@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="formulario.js"></script>
+</head>
+<body><FONT FACE="verdana"><form id="empleado" action="admin.php" method="POST">
+    <table align="center">
+        <tr><td align="right">Apellido </td>
+        <td><input type="text" id="apellido" name="apellido"></td></tr>
+        <tr><td align="right">Nombre </td>
+        <td><input type="text" id="nombre" name="nombre"></td></tr>
+        <tr><td align="right">DNI </td>
+        <td><input type="text" id="dni" name="dni"></td></tr>
+        <tr><td align="right">Sexo </td>
+        <td><select id="cboSexo" name="cboSexo">
+        <option value="fem">Femenino</option>
+        <option value="masc">Masculino</option>
+        <option value="indef">Indefinido</option></select></td></tr>
+        <tr><td align="right">Legajo </td>
+        <td><input type="text" id="legajo" name="legajo"></td></tr>
+        <tr><td align="right">Sueldo </td>
+        <td><input type="text" id="sueldo" name="sueldo"></td>
+        <tr><td><input type="button" name="btnAcept" value="Aceptar" onclick="CrearNuevoEmpleado()"></td>
+        <td><input type="reset" name="btnCancel" value="Cancelar" ></td></tr>
+    </table>
+</form></FONT></body>
+</html>

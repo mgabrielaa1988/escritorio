@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1511266992 source:d:\segado-emilio\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510253828 d:\segado-emilio\arraylist.h
+
+1512568386 source:d:\segado-emilio\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayList.h"
+	"generic.h"
+	"empleados.h"
+
+1507501688 d:\segado-emilio\generic.h
+
+1512568385 d:\segado-emilio\empleados.h
+
+1510971232 source:d:\segado-emilio\generic.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"generic.h"
+
+1512571621 source:d:\segado-emilio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+	"registros.h"
+	"multiple.h"
+	"generic.h"
+
+1512571419 d:\segado-emilio\registros.h
+
+1512570025 d:\segado-emilio\multiple.h
+
+1512571420 source:d:\segado-emilio\multiple.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+	"registros.h"
+	"multiple.h"
+	"generic.h"
+
+1512571574 source:d:\segado-emilio\registros.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayList.h"
+	"registros.h"
+	"generic.h"
+
+1511266992 source:f:\emilio\segado-emilio\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510253828 f:\emilio\segado-emilio\arraylist.h
+
+1512568388 source:f:\emilio\segado-emilio\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayList.h"
+	"generic.h"
+	"empleados.h"
+
+1507501688 f:\emilio\segado-emilio\generic.h
+
+1512568386 f:\emilio\segado-emilio\empleados.h
+
+1510971232 source:f:\emilio\segado-emilio\generic.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"generic.h"
+
+1512572298 source:f:\emilio\segado-emilio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"empleados.h"
+	"registros.h"
+	"multiple.h"
+	"generic.h"
+
+1512571420 f:\emilio\segado-emilio\registros.h
+
+1512570026 f:\emilio\segado-emilio\multiple.h
+
+1512571576 source:f:\emilio\segado-emilio\registros.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ArrayList.h"
+	"registros.h"
+	"generic.h"
+

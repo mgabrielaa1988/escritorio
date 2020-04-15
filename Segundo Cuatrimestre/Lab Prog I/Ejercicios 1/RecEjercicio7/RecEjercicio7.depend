@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1522789096 source:c:\users\gabriela\desktop\segundo cuatrimestre\lab prog i\ejercicios 1\recejercicio7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

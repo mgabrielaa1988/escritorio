@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1504033599 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\clases\clase 2\clase 3 ejercicio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"Clase 3.h"
+
+1504034793 c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\clases\clase 2\clase 3 ejercicio\clase 3.h
+
+1504033758 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\clases\clase 2\clase 3 ejercicio\clase 3.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"Clase 3.h"
+

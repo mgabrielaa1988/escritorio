@@ -1,0 +1,24 @@
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Tests Unitarios.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Tests Unitarios.pdb
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\ClasesInstanciables.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Entidades.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Excepciones.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Archivos.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\ClasesInstanciables.pdb
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Entidades.pdb
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Excepciones.pdb
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\bin\Debug\Archivos.pdb
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\obj\Debug\Tests Unitarios.csproj.CoreCompileInputs.cache
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\obj\Debug\Tests Unitarios.csproj.CopyComplete
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\obj\Debug\Tests Unitarios.dll
+C:\Users\Iglesia de la Gracia\Desktop\TP 3\Tests Unitarios\obj\Debug\Tests Unitarios.pdb

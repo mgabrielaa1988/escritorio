@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1525814155 source:c:\users\gabriela\desktop\gabrielaaragon\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1525812141 source:c:\users\gabriela\desktop\gabrielaaragon\funciones.c
+

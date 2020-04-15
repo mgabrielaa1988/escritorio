@@ -1,0 +1,6 @@
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\bin\Debug\Entidades.dll
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\obj\Debug\Entidades.SP.csprojAssemblyReference.cache
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\obj\Debug\Entidades.SP.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\obj\Debug\Entidades.dll
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.RSP\Entidades\obj\Debug\Entidades.pdb

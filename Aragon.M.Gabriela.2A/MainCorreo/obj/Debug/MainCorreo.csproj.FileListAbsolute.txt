@@ -1,0 +1,26 @@
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\bin\Debug\MainCorreo.exe.config
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\bin\Debug\MainCorreo.exe
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\bin\Debug\MainCorreo.pdb
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\bin\Debug\Entidades.dll
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\bin\Debug\Entidades.pdb
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csprojAssemblyReference.cache
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.FrmPpal.resources
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.Properties.Resources.resources
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.GenerateResource.cache
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CopyComplete
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.exe
+C:\Users\Gabriela\Downloads\tp_laboratorio_2-master\tp_laboratorio_2-master\Recuperatorios TP\TP4\CEA.LORENZO.2D.TP4\MainCorreo\obj\Debug\MainCorreo.pdb
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\bin\Debug\MainCorreo.exe.config
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\bin\Debug\MainCorreo.exe
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\bin\Debug\MainCorreo.pdb
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\bin\Debug\Entidades.dll
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\bin\Debug\Entidades.pdb
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.csprojAssemblyReference.cache
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.FrmPpal.resources
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.Properties.Resources.resources
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.csproj.GenerateResource.cache
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.csproj.CopyComplete
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.exe
+C:\Users\Gabriela\Desktop\Aragon.M.Gabriela.2A\MainCorreo\obj\Debug\MainCorreo.pdb

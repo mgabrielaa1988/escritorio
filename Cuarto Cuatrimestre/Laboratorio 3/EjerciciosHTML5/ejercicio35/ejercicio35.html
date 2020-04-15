@@ -1,0 +1,64 @@
+
+<!--35- Generar una función en Type Script que determine si el contenido de un cuadro de texto (INPUT type=text) 
+es un palíndromo o no. Si lo es, mostrará un mensaje escrito en un <span>, si no lo es, el mensaje se mostrará 
+en un alert. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 35 - HTML</title>
+    <style>
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black;
+            }
+            
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            
+            .tooltip .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+            
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="ejercicio35.js"></script>
+</head>
+<body>
+    <form align="center" onSubmit="return false;">
+            Cuadro para palindromo<br>
+            <div id="tooltip">
+            <input type="text" id="txtPalindromo" placeholder="Escriba su frase..." onkeydown="CheckEnter(this, event.key)">
+        </div>
+    </form>
+</body>
+</html>

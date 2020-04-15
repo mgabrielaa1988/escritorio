@@ -1,0 +1,14 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\bin\Debug\Ejercicio00.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\bin\Debug\Ejercicio00.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\bin\Debug\Ejercicio00.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\obj\Debug\Ejercicio00.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\obj\Debug\Ejercicio00.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\obj\Debug\Ejercicio00.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Ejercicio00\obj\Debug\Ejercicio00.pdb
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\bin\Debug\Ejercicio00.exe.config
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\bin\Debug\Ejercicio00.exe
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\bin\Debug\Ejercicio00.pdb
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\obj\Debug\Ejercicio00.csprojAssemblyReference.cache
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\obj\Debug\Ejercicio00.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\obj\Debug\Ejercicio00.exe
+C:\Users\Gabriela\Desktop\Tercer Cuatrimestre\Guia Ejercicios\Prog-y-Lab-2-master\Prog-y-Lab-2-master\Ejercicio00\obj\Debug\Ejercicio00.pdb

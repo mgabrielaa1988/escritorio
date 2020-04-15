@@ -1,0 +1,6 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\bin\Debug\Clase14.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\bin\Debug\Clase14.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\obj\Debug\Clase14.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\obj\Debug\Clase14.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\obj\Debug\Clase14.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Clase14\obj\Debug\Clase14.pdb

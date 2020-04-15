@@ -1,0 +1,14 @@
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF_Clase08.Form1.resources
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF_Clase08.Properties.Resources.resources
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.csproj.GenerateResource.cache
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\bin\Debug\TestWF-Clase08.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\bin\Debug\TestWF-Clase08.exe
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\bin\Debug\TestWF-Clase08.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\bin\Debug\Entidades.Clase07.dll
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\bin\Debug\Entidades.Clase07.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.csproj.CopyComplete
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.exe
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF-Clase08.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\TestWF-Clase08\obj\Debug\TestWF_Clase08.frmTempera.resources

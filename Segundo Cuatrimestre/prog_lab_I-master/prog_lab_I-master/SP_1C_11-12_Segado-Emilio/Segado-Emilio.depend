@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1511266992 source:d:\segado-emilio\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510253828 d:\segado-emilio\arraylist.h
+
+1510971232 source:d:\segado-emilio\generic.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"generic.h"
+
+1507501688 d:\segado-emilio\generic.h
+
+1511785856 source:d:\segado-emilio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"generic.h"
+	"ArrayList.h"
+	"funciones.h"
+
+1511785622 source:d:\segado-emilio\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"generic.h"
+	"funciones.h"
+
+1511785552 d:\segado-emilio\funciones.h
+
+1511266992 source:c:\riot games\utnfra\prog-lab i\parciales\segado-emilio\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1510253828 c:\riot games\utnfra\prog-lab i\parciales\segado-emilio\arraylist.h
+
+1511785858 source:c:\riot games\utnfra\prog-lab i\parciales\segado-emilio\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"generic.h"
+	"ArrayList.h"
+	"funciones.h"
+
+1511785554 c:\riot games\utnfra\prog-lab i\parciales\segado-emilio\funciones.h
+

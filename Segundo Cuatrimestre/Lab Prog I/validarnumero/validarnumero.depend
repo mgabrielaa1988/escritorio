@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1523577723 source:c:\users\gabriela\desktop\segundo cuatrimestre\lab prog i\validarnumero\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+

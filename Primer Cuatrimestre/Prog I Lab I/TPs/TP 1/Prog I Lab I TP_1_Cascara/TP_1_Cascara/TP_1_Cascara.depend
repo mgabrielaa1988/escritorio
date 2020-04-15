@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1504064161 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\prog i lab i tp_1_cascara\tp_1_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<math.h>
+	"funciones.h"
+
+1504058821 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\prog i lab i tp_1_cascara\tp_1_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1504064201 c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\prog i lab i tp_1_cascara\tp_1_cascara\funciones.h
+

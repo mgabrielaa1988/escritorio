@@ -1,0 +1,7 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\bin\Debug\Clase071118.dll.config
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\bin\Debug\Clase071118.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\bin\Debug\Clase071118.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\obj\Debug\Clase071118.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\obj\Debug\Clase071118.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\obj\Debug\Clase071118.dll
+D:\VisualStudio\Aragon.Gabriela.2A\Clase071118\obj\Debug\Clase071118.pdb

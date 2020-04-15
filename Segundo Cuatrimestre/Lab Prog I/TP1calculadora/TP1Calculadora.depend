@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1523579087 source:c:\users\gabriela\desktop\tp1calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"TP1Funciones.h"
+
+1523579180 c:\users\gabriela\desktop\tp1calculadora\tp1funciones.h
+
+1523579151 source:c:\users\gabriela\desktop\tp1calculadora\tp1funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"TP1Funciones.h"
+

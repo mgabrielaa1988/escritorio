@@ -1,0 +1,7 @@
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\bin\Debug\EjercicioClase04.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\bin\Debug\EjercicioClase04.exe
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\bin\Debug\EjercicioClase04.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\obj\Debug\EjercicioClase04.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\obj\Debug\EjercicioClase04.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\obj\Debug\EjercicioClase04.exe
+D:\VisualStudio\Aragon.Gabriela.2A\EjercicioClase04\obj\Debug\EjercicioClase04.pdb

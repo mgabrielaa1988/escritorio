@@ -1,0 +1,12 @@
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\bin\Debug\PracticaParcial.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\bin\Debug\PracticaParcial.exe
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\bin\Debug\PracticaParcial.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.FrmPrincipal.resources
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.frmDatos.resources
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.frmTestDelegados.resources
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.Properties.Resources.resources
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.csproj.GenerateResource.cache
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.exe
+D:\VisualStudio\Aragon.Gabriela.2A\PracticaParcial\obj\Debug\PracticaParcial.pdb

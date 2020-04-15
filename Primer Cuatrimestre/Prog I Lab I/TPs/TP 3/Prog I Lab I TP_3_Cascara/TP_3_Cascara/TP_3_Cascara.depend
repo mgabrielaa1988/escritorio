@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1510269846 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 3\prog i lab i tp_3_cascara\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"TP3 Funciones.h"
+
+1527609019 c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 3\prog i lab i tp_3_cascara\tp_3_cascara\tp3 funciones.h
+
+1510271283 source:c:\users\gabriela\desktop\primer cuatrimestre\prog i lab i\tps\tp 3\prog i lab i tp_3_cascara\tp_3_cascara\tp3 funciones.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"TP3 Funciones.h"
+

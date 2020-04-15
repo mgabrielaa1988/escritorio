@@ -1,0 +1,86 @@
+Mejorar hoy: Código Mañana
+
+13 lenguajes de programación que definen el futuro de la codificación
+
+Más rápidos, con programación más inteligente y menos errores. Esas son las promesas que vienen de los creadores de la más reciente sucesión de lenguajes para captar la atención de los programadores. Sí, son las mismas palabras de moda que ya hemos escuchado, pero la carencia de novedad no es razón para desecharlas. El futuro de la codificación requiere estabilidad y buenas prácticas de esta manera nuestras innovaciones funcionaran. De hecho, nuestros proyectos usualmente son mucho más grandes ahora, necesitamos la innovación más que nunca.
+Si hay un tema en común entre los lenguajes que describo a continuación, es que el aumento de la automatización puede producir un código digno de los términos "más rápido, más inteligente y sin errores". Los más recientes enfoques incluyen más estructura y más abstracción, permitiendo que las entrañas del lenguaje hagan lo que los programadores tenían que hacer por ellos mismos. Estas funciones automatizadas dan al programador más empuje para concentrarse en los grandes problemas. En muchos casos, esto también produce un mejor funcionamiento porque los mecanismos automatizados son mucho más capaces de encontrar oportunidades de eficiencia y cálculo paralelo mientras elimina algunos errores simples que llevan a errores.
+Pero más allá de este tema general, hay una pequeña coincidencia. uno de los lenguajes esta construido para el análisis estadístico. Varios están destinados a modernizar los lenguajes clásicos. Algunos no son ni siquiera lenguajes, son simplemente pre-procesadores. Sin embargo, todos ellos estan cambiando el modo en el que hoy que escribimos el código y sentando las bases para el futuro de la codificación.
+Aquí están 13 lenguajes que están cambiando cómo le decimos a las computadoras qué hacer. Algunos de estos lenguajes son nuevos, unos ya son muy populares, y otros no son verdaderamente lenguajes. Si usted está buscando un artículo sobre los nuevos lenguajes de programación que tienen una oportunidad de convertirse en pilares de la industria, eche un vistazo a 5 lenguajes de programación emergentes con un futuro brillante.
+
+1.R
+En el fondo, R es un lenguaje de programación, pero es más que un portador modelo de la actual obsesión del mundo con el uso de estadísticas para desbloquear patrones en largos bloques de datos. R fue diseñado por estadísticos y científicos para hacer más fácil su trabajo. Viene con la mayoría de las funciones estándar usadas en el análisis de datos y  muchos de los algoritmos estadísticos más útiles ya están implementados como bibliotecas distribuidas libremente. Tiene la mayoría de los datos que los científicos necesitan para hacer ciencia basada en datos.
+Muchas personas terminan usando R dentro de un IDE como un bloc de notas de alta potencia para trabajar con los datos. R Studio y R Commander son dos interfaces populares que permiten cargar tus datos y trabajar con ellos. Hacen esto no sólo como un lenguaje que compila y ejecuta sino más como un mundo interactivo en el cual hacer su trabajo.
+Aspectos destacados: expresiones inteligentes para seleccionar un subconjunto de datos y analizarlos.
+Dolores de cabeza: dirigido a omputadoras de escirtorio, no al mundo de los grandes datos donde tecnologías como Hadoop dominan.
+
+2.Java 8
+Java no es un lenguaje nuevo. A menudo es el primer lenguaje de todo el mundo, gracias a su rol como lenguaje libre para AP Computer Science. Hay miles de milllones de archivos JAR flotando alrededor del mundo de ejecutables.
+Pero Java 8 es un poco diferente. Viene con nuevas características destinadas a ofrecer técnicas funcionales que pueden desbloquear el paralelismo en su código. No tiene que usarlos. Usted podría apegarse al viejo Java porque todavía funciona. Pero si no lo usa, estará perdiendo la oportunidad de ofrecer a la máquina virtual Java (JVM) todavía más estructura para optimizar la ejecución. Perderá la oportunidad de pensar funcionalmente y escribir un código más limpio, rápido y con menos errores.
+Aspectos destacados: expresiones Lambda y código coincidente.
+Dolores de cabeza: una sensación rebuscada nos hará querer saltar con ambos pies y usar Scala (ver abajo).
+
+3.Swift
+Apple vio una oportunidad cuando los principiantes de programación se quejaron del interminable embrollo de la escritura en el Objetive C. Así que lanzaron Swift implicando fuertemente que se reemplazaría Objetive C para escribir para Mac o Iphone. Acreditaron que la creación de archivos de encabezado y el malabarismo de punteros era anticuado. Swift oculta esta información, haciéndolo mucho más parecido a cómo se escribe en un lenguaje moderni como Java o Python. Finalmente, el lenguaje está haciendo todo el trabajo de blindar, al igual que el código moderno.
+La especificación del lenguaje es amplia. No es sólo una limpieza sintáctica del Objetive C. Hay abundantes características nuevas, tantas que son difíciles de enumerar. Algunos codificadores podrían quejarse de que hay mucho que aprender, y Swift hará la vida más complicada para los equipos que necesitan leer el código de otro. Pero no nos enfoquemos demasiado en eso. Los codificadores de Iphone pueden trabajar con una sintaxis más limpia y dejar que el lenguaje haga el trabajo complicado.
+Aspectos destacados: Sintaxis drasticamente más limpia y menor nivel de malabarismos de punteros.
+Dolores de cabeza: La compatibilidad con versiones anteriores requiere ocasionalmente pensar en bits y bytes.
+
+4.Go
+Cuando Google se propuso construir un nuevo lenguaje para potenciar sus torres de servidores, decidió construir algo simple desechando muchas ideas inteligentes que se encuentran con frecuencia en otros lenguajes. Ellos querían continuar con todo, como dijo un creador: "lo suficientemente simple como para guardarse en la cabeza de un programador". No hay abstracciones complejas o metaprogramación inteligente en Go, sólo las características básicas especificadas en una sintaxis directa.
+Esto puede hacer las cosas más fáciles para todas las personas de un equipo, porque nadie tiene que preocuparse cuando alguien más descubra una buena de los alcances inferiores de la especificación del lenguaje.
+Aspectos destacados: Sólo un lenguaje limpio y simple para manipular datos.
+Dolores de cabeza: A veces se necesita una función inteligente.
+
+5.CoffeeScript
+En algún momento de la línea, algunos programadores de JavaScript se cansaron de escribir todos esos puntos y comas. Así que crearon CoffeScript, una herramienta de preprocesamiento que convierte su taquigrafía sintáctica en JavaScript regular. No es tanto un lenguaje sino una forma de ahorrar tiempo tipeando todos esos puntos y comas y llaves.
+Los habladores pueden afirmar que CoffeeScript es nada más que una manera de descansar el dedo meñique de su mano derecha, pero están perdiendo el punto. Un código limpio es fácil de leer, y todos nos beneficiamos cuando podemos analizar el código rápidamente en nuestro cerebro. CoffeeScript facilita que todo el mundo entienda el código, y eso beneficia a todos.
+Aspectos destacados: Código más limpio
+Dolores de cabeza: A veces las llaves facilitan la comprensión de un código profundamente anidado.
+
+6.D
+Para muchos programadores, no hay nada como el limpio y simple mundo de C. La sintaxis es mínima y los mapas de estructura se limitan a la CPU. Algunos lo llaman Asamblea portátil. Incluso para todas estas ventajas, algunos programadores C sienten como están perdiendo las ventajas incorporadas en los nuevos lenguajes.
+Por eso se está construyendo D. Su propósito es actualizar toda la pureza lógica de C y C++ mientras agrega conveniencias modernas como administración de memoria, inferencia de tipos y comprobación de límites.
+Aspectos destacados: Algunos de las nuevas características más esenciales en lenguajes.
+Dolores de cabeza: Usted intercambia un poco de poder por la seguridad en la red.
+
+7.Less.js
+Al igual que CoffeeScript, Less.js es verdaderamente sólo un preprocesador para sus archivos, uno que hace más fácil crear elaborados archivos CSS. Cualquier persona que ha intentado construir una lista de regla de diseño incluso para el sitio web más sencillo sabe que la creación básica de CSS requiere abundantes repeticiones; Less.js maneja todas estas repeticiones con bucles, variables y otras construcciones básicas de programación. Usted puede, por ejemplo, crear una variable para mantener el mismo tono de verde para utilizarlo como fondo y como color de resaltado. Si el jefe quiere cambiarlo, sólo necesita actualizar un punto especifico.
+Hay construcciones más elaboradas como mixins y reglas anidadas que crean efectivamente bloques de comando de disposición estándar que pueden ser incluidos en cualquier numero de clase CSS. Si alguien decide que la fuente en negrita tiene que ir, usted sólo necesita corregirla en su origen y Less.js empujará la nueva regla a todas las demás definiciones.
+Aspectos destacados: Código más simple
+Dolores de cabeza: Algunas buenas construcciones lo dejan pidiendo por más.
+
+8.MATLAB
+Había una vez, MATLAB era un lenguaje incondicional para matemáticos y científicos duros que necesitan hacer juegos de malabares con complejos sistemas de ecuaciones y encontrar soluciones. Sigue siendo eso, y más proyectos actualmente necesitan esas habilidades complejas. Entonces MATLAB está encontrando su camino en más aplicaciones a medida que los desarrolladores empiezan a profundizar en complejos análisis matemáticos y estadísticos. El núcleo ha sido probado por décadas por matemáticos y ahora es capaz de ayudar a los simples mortales.
+Aspectos destacados: algoritmos rápidos, estables y sólidos para matemáticas complejas.
+Dolores de cabeza: las matemáticas todavís son complejas.
+
+9.Arduino
+La Internet de las cosa está llegando. más y más dispositivos tienen chips incrustados esperando que se les diga que hacer. Arduino no es tanto un nuevo lenguaje sino un conjunto de funciones de C o C++ unidas. El compilador hace el resto del trabajo.
+Muchas de estas funciones serán una verdadera novedad para los programadores, especialmente los programadores usados para crear interfaces de usuario para computadoras en general. Puede leer voltajes, comprobar el estado de los pines en la placa, y por supuesto, controlar como esos LEDs parpadean para enviar mensajes enigmáticos a las personas que miran el dispositivo.
+Aspectos destacados: el mundo de los dispositivos es tu ostra.
+Dolores de cabeza: es en gran parte C y C++.
+
+10.CUDA
+La mayoría de la gente hace un buen de su placa de vídeo por supuesto. Ni siquiera piensan en cuántos triángulos está malabareando la placa de vídeo, siempre y cuando su mundo sea un complejo juego de disparos en primera persona. Pero si sólo miraran bajo el capó, encontrarían una gran cantidad de potencia lista para ser desbloqueada por el programador correcto. El lenguaje CUDA es una forma de que NVIDIA extienda el poder de sus unidades de procesamiento gráfico (GPU) para trabajar de manera diferente a matar zombies o robots.
+El desafío clave para usa CUDA es aprender a identificar las partes paralelas de su algoritmo. Una vez que las encuentre, puede configurar el código CUDA para explotar a través de estas secciones utilizando toda la potencia paralela inherente de la tarjeta de vídeo. Algunos trabajos, como la extracción Bitcoins, son bastante simples, pero otros desafíos, como la clasificación y la dinámica molecular, puede tomar un poco más de razonamiento. A los científicos les encanta usar el código CUDA para sus grandes simulaciones multidimensionales.
+Aspectos destacados: rápido rendimiento, al menos para código paralelo.
+Dolores de cabeza: Identificar las secciones fácilmente paralelizables del código no siempre es sencillo.
+
+11.Scala
+Todo el mundo que ha tomado un curso avanzado en lenguajes de programación sabe que el mundo académico ama la idea de programación funcional, que insiste en que cada función tiene entradas y salidas bien definidas, pero no hay forma de jugar con otras variables. Hay docenas de buenos lenguajes funcionales, y sería imposible agregar todos ellos aquí. Scala es una de las más conocidas, con una de las bases de usuarios más grandes. Fue diseñado para ejecutarse en JVM, así que cualquier cosa que escriba en Scala puede ejecutarse en cualquier lugar que ejecute Java, lo cual es casi en todas partes.
+Hay buenas razones para creer que los preceptos de programación funcional, cuando se siguen, pueden construir un código más fuerte que es más fácil de optimizar ya que algunos de los errores son de lo más enloquecedores. Scala es una forma de sumergir el dedo en estas aguas.
+Aspectos destacados: Funcional, pero lo suficientemente flexible como para trabajar bien con otros usuarios de JVM
+Dolores de cabeza: Pensar funcionalmente puede ser difícil para algunas tareas y aplicaciones.
+
+12.Haskell
+Scala no es el único lenguaje funcional con una importante base de aficionados. Uno de los idiomas funcionales más populares, Haskell, es otro buen lugar para que los programadores se inicien. Ya se está utilizando para proyectos importantes en empresas como Facebook. Está dando un rendimiento real en proyectos reales, algo que a menudo no es el caso para el código académico.
+Aspectos destacados: ya probado
+Dolores de cabeza: pensar funcionalmente puede requerir la fijación de algunos malos hábitos.
+
+13.Jolt
+Cuando XML era el formato grande de datos, un lenguaje funcional llamado XSLT era una de las mejores herramientas para manipular grandes conjuntos de datos codificados en XML. Ahora que JSON se ha hecho cargo del mundo, Jolt es una de las opciones para manipular sus datos JSON y transformarlos. Puede escribir filtros sencillos que extraigan atributos y JOLT los encontrará y los modificará como desee. Ver también Tempo y usar XSLT.
+Aspectos destacados: muy simple para muchos problemas comunes de JSON
+Dolores de cabeza: algunas transformaciones JSON son casi imposibles.
+
+Aquí o hay que generalizar
+Es difícil generalizar mucho sobre los nuevos lenguajes, al menos más allá de las promesas de que producirán código más rápido, más inteligente y contiene menos errores. De hecho, es un poco difícil llamarlos nuevos. La historia de algunos de estos lenguajes se remonta a años, incluso décadas. Simplemente parecen nuevos, ahora que están siendo descubiertos por el extenso mundo.

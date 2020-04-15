@@ -1,0 +1,2 @@
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Gabriela\source\repos\Aragon.Gabriela.2A.TP1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache

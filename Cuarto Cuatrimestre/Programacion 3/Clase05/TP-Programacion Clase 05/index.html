@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP Base de Datos</title>
+    <script src="JavaScript/Funciones.js"></script>
+    <script src="JavaScript/Ajax.js"></script>
+</head>
+<body>
+    <table align="center" border="2" style="border-color: green;background-color: silver">
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="1:Mostrar Productos (Alfabéticamente Ordenados)" onclick="Funciones.MostrarProductos()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="2:Mostrar Proveedores de Quilmes" onclick="Funciones.ProveedoresQuilmes()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="3:Mostrar Envios de Cantidad entre 200 Y 300" onclick="Funciones.EnviosEntre200y300()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="4:Cantidad de Productos Enviados" onclick="Funciones.ProductosEnviados()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="5:Primeros 3 Productos Enviados" onclick="Funciones.Primeros3Productos()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="6:Mostrar Nombre de Proveedores y Productos Enviados" onclick="Funciones.ProveedoresyProductosEnviados()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="7:Monto total de Envios" onclick="Funciones.MontoTotalEnvios()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="8:Monto del Producto '1' Enviado por el Proveedor '102'" onclick="Funciones.MontoDeProducto1PorProveedor102()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="9:Numeros de Productos por Proveedores de 'Avellaneda'" onclick="Funciones.ProductosPorProveedoresdeAvellaneda()"></td>
+        </tr>
+        <tr>
+            <td style="color: whitesmoke;background-color: red;" align="center"><input type="button" style="color:whitesmoke;background-color:black;" value="10:Domicilios y Localidades de Proveedores con ' i ' en sus Nombres" onclick="Funciones.DatosDeProveedoresConLetraI()"></td>
+        </tr>
+        <table name="muestra" id="muestra" border="2" align="center" style="color:white;background-color:black;">
+        </table>
+    </table>
+</body>
+</html>

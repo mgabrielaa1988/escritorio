@@ -1,0 +1,45 @@
+<!--24- Realizar una página que permita el ingreso de: Apellido, Nombre, Dni y sexo de una persona. 
+Si el usuario pulsa el botón de confirmación se invocará a una función encargada de validar cada uno de 
+los datos ingresados (que tanto el nombre y apellido no estén vacíos, que el documento sea numérico y que 
+el sexo sea o ‘m’ o ‘f’ ). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="ejercicio24.js"></script>
+    <title>Ejercicio 24</title>
+</head>
+
+<body>
+    <FONT face="verdana">
+        <div align="center">
+            <table>
+                <tr>
+                    <td align="right">Nombre: </td>
+                    <td><input type="text" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td align="right">Apellido: </td>
+                    <td><input type="text" id="apellido"></td>
+                </tr>
+                <tr>
+                    <td align="right">DNI: </td>
+                    <td><input type="number" id="dni"></td>
+                </tr>
+                <tr>
+                    <td align="right">Sexo: </td>
+                    <td><input type="text" id="sexo"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="button" onclick="btnValidar()" value="  Validar  "></td>
+                </tr>
+            </table>
+        </div>
+    </FONT>
+</body>
+
+</html>

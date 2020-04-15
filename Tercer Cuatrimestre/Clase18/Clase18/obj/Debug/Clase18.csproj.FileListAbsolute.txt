@@ -1,0 +1,10 @@
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\bin\Debug\Clase18.exe.config
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\bin\Debug\Clase18.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\bin\Debug\Clase18.pdb
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.csprojAssemblyReference.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.Form1.resources
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.Properties.Resources.resources
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.csproj.GenerateResource.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.exe
+D:\VisualStudio\Aragon.Gabriela.2A\Clase18\obj\Debug\Clase18.pdb

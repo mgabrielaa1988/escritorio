@@ -1,0 +1,10 @@
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\Entidades\bin\Debug\Entidades.dll
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\Entidades\bin\Debug\Entidades.pdb
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.dll
+D:\Josias Rivola\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\Entidades\bin\Debug\Entidades.dll
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\Entidades\bin\Debug\Entidades.pdb
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.dll
+C:\Users\josia_000\Downloads\Segundoparcial\Rivola.Josias\Entidades\obj\Debug\Entidades.pdb
